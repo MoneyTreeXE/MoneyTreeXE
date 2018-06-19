@@ -141,8 +141,7 @@ public:
         base58Prefixes[SECRET_KEY] = std::vector<unsigned char>(1, 48);// 
         base58Prefixes[EXT_PUBLIC_KEY] = { 0x54, 0x52, 0x45, 0x45 };// 
         base58Prefixes[EXT_SECRET_KEY] = { 0x54, 0x72, 0x65, 0x65 };// 
-        bech32_hrp = "bc";
-
+        bech32_hrp = "MXEM";// 
         vFixedSeeds = std::vector<SeedSpec6>(pnSeed6_main, pnSeed6_main + ARRAYLEN(pnSeed6_main));
 
         fDefaultConsistencyChecks = false;
@@ -220,8 +219,7 @@ public:
         base58Prefixes[SECRET_KEY] = std::vector<unsigned char>(1, 85);// 
         base58Prefixes[EXT_PUBLIC_KEY] = { 0x4c, 0x45, 0x41, 0x46 };// 
         base58Prefixes[EXT_SECRET_KEY] = { 0x4c, 0x65, 0x61, 0x66 };// 
-        bech32_hrp = "tb";
-
+        bech32_hrp = "MXET";// 
         vFixedSeeds = std::vector<SeedSpec6>(pnSeed6_test, pnSeed6_test + ARRAYLEN(pnSeed6_test));
 
         fDefaultConsistencyChecks = false;
@@ -300,7 +298,7 @@ public:
         base58Prefixes[SECRET_KEY] = std::vector<unsigned char>(1, 85);// 
         base58Prefixes[EXT_PUBLIC_KEY] = { 0x4c, 0x45, 0x41, 0x46 };// 
         base58Prefixes[EXT_SECRET_KEY] = { 0x4c, 0x65, 0x61, 0x66 };// 
-        bech32_hrp = "bcrt";
+        bech32_hrp = "MXER";// 
     }
 };
 
