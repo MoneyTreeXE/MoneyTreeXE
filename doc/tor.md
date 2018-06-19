@@ -42,8 +42,8 @@ reachable from the Tor network. Add these lines to your /etc/tor/torrc (or equiv
 config file):
 
 	HiddenServiceDir /var/lib/tor/bitcoin-service/
-	HiddenServicePort 8333 127.0.0.1:8333
-	HiddenServicePort 18333 127.0.0.1:18333
+	HiddenServicePort 5654 127.0.0.1:5654
+	HiddenServicePort 15654 127.0.0.1:15654
 
 The directory can be different of course, but (both) port numbers should be equal to
 your bitcoind's P2P listen port (8333 by default).
@@ -81,7 +81,7 @@ as well, use `discover` instead:
 
 	./bitcoind ... -discover
 
-and open port 8333 on your firewall (or use -upnp).
+and open port 5654 on your firewall (or use -upnp).
 
 If you only want to use Tor to reach onion addresses, but not use it as a proxy
 for normal IPv4/IPv6 communication, use:
