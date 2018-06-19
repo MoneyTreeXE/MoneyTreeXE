@@ -6,8 +6,8 @@
 #ifndef MONEYTREEXE_HASH_H
 #define MONEYTREEXE_HASH_H
 
-#include <crypto/ripemd160.h>
-#include <crypto/sha256.h>
+#include <crypto/ripemd/ripemd160.h>
+#include <crypto/sha/sha256.h>
 #include <prevector.h>
 #include <serialize.h>
 #include <uint256.h>

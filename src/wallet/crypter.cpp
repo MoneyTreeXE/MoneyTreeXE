@@ -4,8 +4,8 @@
 
 #include <wallet/crypter.h>
 
-#include <crypto/aes.h>
-#include <crypto/sha512.h>
+#include <crypto/aes/aes.h>
+#include <crypto/sha/sha512.h>
 #include <script/script.h>
 #include <script/standard.h>
 #include <util.h>

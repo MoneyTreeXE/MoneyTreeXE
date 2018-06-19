@@ -6,7 +6,7 @@
 // See https://cr.yp.to/chacha.html.
 
 #include <crypto/common.h>
-#include <crypto/chacha20.h>
+#include <crypto/chacha/chacha20.h>
 
 #include <string.h>
 

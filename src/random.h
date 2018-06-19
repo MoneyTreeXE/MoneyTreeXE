@@ -6,7 +6,7 @@
 #ifndef MONEYTREEXE_RANDOM_H
 #define MONEYTREEXE_RANDOM_H
 
-#include <crypto/chacha20.h>
+#include <crypto/chacha/chacha20.h>
 #include <crypto/common.h>
 #include <uint256.h>
 

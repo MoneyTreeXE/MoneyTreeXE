@@ -2,7 +2,7 @@
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#include <crypto/aes.h>
+#include <crypto/aes/aes.h>
 #include <crypto/common.h>
 
 #include <assert.h>

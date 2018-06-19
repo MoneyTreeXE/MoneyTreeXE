@@ -7,7 +7,7 @@
 #include <chainparams.h>
 #include <consensus/consensus.h>
 #include <consensus/validation.h>
-#include <crypto/sha256.h>
+#include <crypto/sha/sha256.h>
 #include <validation.h>
 #include <miner.h>
 #include <net_processing.h>

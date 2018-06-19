@@ -5,9 +5,9 @@
 
 #include <script/interpreter.h>
 
-#include <crypto/ripemd160.h>
-#include <crypto/sha1.h>
-#include <crypto/sha256.h>
+#include <crypto/ripemd/ripemd160.h>
+#include <crypto/sha/sha1.h>
+#include <crypto/sha/sha256.h>
 #include <pubkey.h>
 #include <script/script.h>
 #include <uint256.h>

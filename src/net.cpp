@@ -13,7 +13,7 @@
 #include <clientversion.h>
 #include <consensus/consensus.h>
 #include <crypto/common.h>
-#include <crypto/sha256.h>
+#include <crypto/sha/sha256.h>
 #include <primitives/transaction.h>
 #include <netbase.h>
 #include <scheduler.h>
