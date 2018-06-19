@@ -24,10 +24,10 @@ BITCOIN_INCLUDES += -I$(srcdir)/secp256k1/include
 BITCOIN_INCLUDES += $(UNIVALUE_CFLAGS)
 
 LIBMONEYTREEXE_SERVER=libmoneytreexe_server.a
-LIBBITCOIN_COMMON=libbitcoin_common.a
+LIBMONEYTREEXE_COMMON=libmoneytreexe_common.a
 LIBMONEYTREEXE_CONSENSUS=libmoneytreexe_consensus.a
 LIBMONEYTREEXE_CLI=libmoneytreexe_cli.a
-LIBBITCOIN_UTIL=libbitcoin_util.a
+LIBMONEYTREEXE_UTIL=libmoneytreexe_util.a
 LIBBITCOIN_CRYPTO=crypto/libbitcoin_crypto.a
 LIBMONEYTREEXEQT=qt/libmoneytreexeqt.a
 LIBSECP256K1=secp256k1/libsecp256k1.la
@@ -49,8 +49,8 @@ $(LIBSECP256K1): $(wildcard secp256k1/src/*) $(wildcard secp256k1/include/*)
 # But to build the less dependent modules first, we manually select their order here:
 EXTRA_LIBRARIES += \
   $(LIBBITCOIN_CRYPTO) \
-  $(LIBBITCOIN_UTIL) \
-  $(LIBBITCOIN_COMMON) \
+  $(LIBMONEYTREEXE_UTIL) \
+  $(LIBMONEYTREEXE_COMMON) \
   $(LIBMONEYTREEXE_CONSENSUS) \
   $(LIBMONEYTREEXE_SERVER) \
   $(LIBMONEYTREEXE_CLI) \
@@ -68,7 +68,7 @@ if BUILD_MONEYTREEXED
   bin_PROGRAMS += moneytreexed
 endif
 
-if BUILD_BITCOIN_UTILS
+if BUILD_MONEYTREEXE_UTILS
   bin_PROGRAMS += moneytreexe-cli moneytreexe-tx
 endif
 
@@ -181,7 +181,7 @@ obj/build.h: FORCE
 	@$(MKDIR_P) $(builddir)/obj
 	@$(top_srcdir)/share/genbuild.sh "$(abs_top_builddir)/src/obj/build.h" \
 	  "$(abs_top_srcdir)"
-libbitcoin_util_a-clientversion.$(OBJEXT): obj/build.h
+libmoneytreexe_util_a-clientversion.$(OBJEXT): obj/build.h
 
 # server: shared between moneytreexed and moneytreexe-qt
 libmoneytreexe_server_a_CPPFLAGS = $(AM_CPPFLAGS) $(BITCOIN_INCLUDES) $(MINIUPNPC_CPPFLAGS) $(EVENT_CFLAGS) $(EVENT_PTHREADS_CFLAGS)
@@ -316,9 +316,9 @@ libmoneytreexe_consensus_a_SOURCES = \
   version.h
 
 # common: shared between moneytreexed, and moneytreexe-qt and non-server tools
-libbitcoin_common_a_CPPFLAGS = $(AM_CPPFLAGS) $(BITCOIN_INCLUDES)
-libbitcoin_common_a_CXXFLAGS = $(AM_CXXFLAGS) $(PIE_FLAGS)
-libbitcoin_common_a_SOURCES = \
+libmoneytreexe_common_a_CPPFLAGS = $(AM_CPPFLAGS) $(BITCOIN_INCLUDES)
+libmoneytreexe_common_a_CXXFLAGS = $(AM_CXXFLAGS) $(PIE_FLAGS)
+libmoneytreexe_common_a_SOURCES = \
   base58.cpp \
   bech32.cpp \
   chainparams.cpp \
@@ -341,9 +341,9 @@ libbitcoin_common_a_SOURCES = \
 # util: shared between all executables.
 # This library *must* be included to make sure that the glibc
 # backward-compatibility objects and their sanity checks are linked.
-libbitcoin_util_a_CPPFLAGS = $(AM_CPPFLAGS) $(BITCOIN_INCLUDES)
-libbitcoin_util_a_CXXFLAGS = $(AM_CXXFLAGS) $(PIE_FLAGS)
-libbitcoin_util_a_SOURCES = \
+libmoneytreexe_util_a_CPPFLAGS = $(AM_CPPFLAGS) $(BITCOIN_INCLUDES)
+libmoneytreexe_util_a_CXXFLAGS = $(AM_CXXFLAGS) $(PIE_FLAGS)
+libmoneytreexe_util_a_SOURCES = \
   support/lockedpool.cpp \
   chainparamsbase.cpp \
   clientversion.cpp \
@@ -364,7 +364,7 @@ libbitcoin_util_a_SOURCES = \
   $(BITCOIN_CORE_H)
 
 if GLIBC_BACK_COMPAT
-libbitcoin_util_a_SOURCES += compat/glibc_compat.cpp
+libmoneytreexe_util_a_SOURCES += compat/glibc_compat.cpp
 endif
 
 # cli: shared between moneytreexe-cli and moneytreexe-qt
@@ -374,7 +374,7 @@ libmoneytreexe_cli_a_SOURCES = \
   rpc/client.cpp \
   $(BITCOIN_CORE_H)
 
-nodist_libbitcoin_util_a_SOURCES = $(srcdir)/obj/build.h
+nodist_libmoneytreexe_util_a_SOURCES = $(srcdir)/obj/build.h
 #
 
 # moneytreexed binary #
@@ -389,9 +389,9 @@ endif
 
 moneytreexed_LDADD = \
   $(LIBMONEYTREEXE_SERVER) \
-  $(LIBBITCOIN_COMMON) \
+  $(LIBMONEYTREEXE_COMMON) \
   $(LIBUNIVALUE) \
-  $(LIBBITCOIN_UTIL) \
+  $(LIBMONEYTREEXE_UTIL) \
   $(LIBBITCOIN_WALLET) \
   $(LIBBITCOIN_ZMQ) \
   $(LIBMONEYTREEXE_CONSENSUS) \
@@ -416,7 +416,7 @@ endif
 moneytreexe_cli_LDADD = \
   $(LIBMONEYTREEXE_CLI) \
   $(LIBUNIVALUE) \
-  $(LIBBITCOIN_UTIL) \
+  $(LIBMONEYTREEXE_UTIL) \
   $(LIBBITCOIN_CRYPTO)
 
 moneytreexe_cli_LDADD += $(BOOST_LIBS) $(SSL_LIBS) $(CRYPTO_LIBS) $(EVENT_LIBS)
@@ -434,8 +434,8 @@ endif
 
 moneytreexe_tx_LDADD = \
   $(LIBUNIVALUE) \
-  $(LIBBITCOIN_COMMON) \
-  $(LIBBITCOIN_UTIL) \
+  $(LIBMONEYTREEXE_COMMON) \
+  $(LIBMONEYTREEXE_UTIL) \
   $(LIBMONEYTREEXE_CONSENSUS) \
   $(LIBBITCOIN_CRYPTO) \
   $(LIBSECP256K1)

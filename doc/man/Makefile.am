@@ -8,6 +8,6 @@ if ENABLE_QT
   dist_man1_MANS+=moneytreexe-qt.1
 endif
 
-if BUILD_BITCOIN_UTILS
+if BUILD_MONEYTREEXE_UTILS
   dist_man1_MANS+=moneytreexe-cli.1 moneytreexe-tx.1
 endif
