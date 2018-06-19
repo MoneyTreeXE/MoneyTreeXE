@@ -243,20 +243,20 @@ done
 
 %if %{_buildqt}
 # qt icons
-install -D -p share/pixmaps/bitcoin.ico %{buildroot}%{_datadir}/pixmaps/bitcoin.ico
+install -D -p share/pixmaps/moneytreexe.ico %{buildroot}%{_datadir}/pixmaps/moneytreexe.ico
 install -p share/pixmaps/nsis-header.bmp %{buildroot}%{_datadir}/pixmaps/
 install -p share/pixmaps/nsis-wizard.bmp %{buildroot}%{_datadir}/pixmaps/
-install -p %{SOURCE100} %{buildroot}%{_datadir}/pixmaps/bitcoin.svg
-%{_bindir}/inkscape %{SOURCE100} --export-png=%{buildroot}%{_datadir}/pixmaps/bitcoin16.png -w16 -h16
-%{_bindir}/inkscape %{SOURCE100} --export-png=%{buildroot}%{_datadir}/pixmaps/bitcoin32.png -w32 -h32
-%{_bindir}/inkscape %{SOURCE100} --export-png=%{buildroot}%{_datadir}/pixmaps/bitcoin64.png -w64 -h64
-%{_bindir}/inkscape %{SOURCE100} --export-png=%{buildroot}%{_datadir}/pixmaps/bitcoin128.png -w128 -h128
-%{_bindir}/inkscape %{SOURCE100} --export-png=%{buildroot}%{_datadir}/pixmaps/bitcoin256.png -w256 -h256
-%{_bindir}/convert -resize 16x16 %{buildroot}%{_datadir}/pixmaps/bitcoin256.png %{buildroot}%{_datadir}/pixmaps/bitcoin16.xpm
-%{_bindir}/convert -resize 32x32 %{buildroot}%{_datadir}/pixmaps/bitcoin256.png %{buildroot}%{_datadir}/pixmaps/bitcoin32.xpm
-%{_bindir}/convert -resize 64x64 %{buildroot}%{_datadir}/pixmaps/bitcoin256.png %{buildroot}%{_datadir}/pixmaps/bitcoin64.xpm
-%{_bindir}/convert -resize 128x128 %{buildroot}%{_datadir}/pixmaps/bitcoin256.png %{buildroot}%{_datadir}/pixmaps/bitcoin128.xpm
-%{_bindir}/convert %{buildroot}%{_datadir}/pixmaps/bitcoin256.png %{buildroot}%{_datadir}/pixmaps/bitcoin256.xpm
+install -p %{SOURCE100} %{buildroot}%{_datadir}/pixmaps/moneytreexe.svg
+%{_bindir}/inkscape %{SOURCE100} --export-png=%{buildroot}%{_datadir}/pixmaps/moneytreexe16.png -w16 -h16
+%{_bindir}/inkscape %{SOURCE100} --export-png=%{buildroot}%{_datadir}/pixmaps/moneytreexe32.png -w32 -h32
+%{_bindir}/inkscape %{SOURCE100} --export-png=%{buildroot}%{_datadir}/pixmaps/moneytreexe64.png -w64 -h64
+%{_bindir}/inkscape %{SOURCE100} --export-png=%{buildroot}%{_datadir}/pixmaps/moneytreexe128.png -w128 -h128
+%{_bindir}/inkscape %{SOURCE100} --export-png=%{buildroot}%{_datadir}/pixmaps/moneytreexe256.png -w256 -h256
+%{_bindir}/convert -resize 16x16 %{buildroot}%{_datadir}/pixmaps/moneytreexe256.png %{buildroot}%{_datadir}/pixmaps/moneytreexe16.xpm
+%{_bindir}/convert -resize 32x32 %{buildroot}%{_datadir}/pixmaps/moneytreexe256.png %{buildroot}%{_datadir}/pixmaps/moneytreexe32.xpm
+%{_bindir}/convert -resize 64x64 %{buildroot}%{_datadir}/pixmaps/moneytreexe256.png %{buildroot}%{_datadir}/pixmaps/moneytreexe64.xpm
+%{_bindir}/convert -resize 128x128 %{buildroot}%{_datadir}/pixmaps/moneytreexe256.png %{buildroot}%{_datadir}/pixmaps/moneytreexe128.xpm
+%{_bindir}/convert %{buildroot}%{_datadir}/pixmaps/moneytreexe256.png %{buildroot}%{_datadir}/pixmaps/moneytreexe256.xpm
 touch %{buildroot}%{_datadir}/pixmaps/*.png -r %{SOURCE100}
 touch %{buildroot}%{_datadir}/pixmaps/*.xpm -r %{SOURCE100}
 
@@ -272,7 +272,7 @@ Comment[tr]=Bitcoin, eşten eşe kriptografik sanal para birimi
 Exec=moneytreexe-qt %u
 Terminal=false
 Type=Application
-Icon=bitcoin128
+Icon=moneytreexe128
 MimeType=x-scheme-handler/bitcoin;
 Categories=Office;Finance;
 EOF
