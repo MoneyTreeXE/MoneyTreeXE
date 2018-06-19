@@ -23,7 +23,7 @@ BITCOIN_INCLUDES=-I$(builddir) $(BDB_CPPFLAGS) $(BOOST_CPPFLAGS) $(LEVELDB_CPPFL
 BITCOIN_INCLUDES += -I$(srcdir)/secp256k1/include
 BITCOIN_INCLUDES += $(UNIVALUE_CFLAGS)
 
-LIBBITCOIN_SERVER=libbitcoin_server.a
+LIBMONEYTREEXE_SERVER=libmoneytreexe_server.a
 LIBBITCOIN_COMMON=libbitcoin_common.a
 LIBMONEYTREEXE_CONSENSUS=libmoneytreexe_consensus.a
 LIBMONEYTREEXE_CLI=libmoneytreexe_cli.a
@@ -52,7 +52,7 @@ EXTRA_LIBRARIES += \
   $(LIBBITCOIN_UTIL) \
   $(LIBBITCOIN_COMMON) \
   $(LIBMONEYTREEXE_CONSENSUS) \
-  $(LIBBITCOIN_SERVER) \
+  $(LIBMONEYTREEXE_SERVER) \
   $(LIBMONEYTREEXE_CLI) \
   $(LIBBITCOIN_WALLET) \
   $(LIBBITCOIN_ZMQ)
@@ -184,9 +184,9 @@ obj/build.h: FORCE
 libbitcoin_util_a-clientversion.$(OBJEXT): obj/build.h
 
 # server: shared between moneytreexed and moneytreexe-qt
-libbitcoin_server_a_CPPFLAGS = $(AM_CPPFLAGS) $(BITCOIN_INCLUDES) $(MINIUPNPC_CPPFLAGS) $(EVENT_CFLAGS) $(EVENT_PTHREADS_CFLAGS)
-libbitcoin_server_a_CXXFLAGS = $(AM_CXXFLAGS) $(PIE_FLAGS)
-libbitcoin_server_a_SOURCES = \
+libmoneytreexe_server_a_CPPFLAGS = $(AM_CPPFLAGS) $(BITCOIN_INCLUDES) $(MINIUPNPC_CPPFLAGS) $(EVENT_CFLAGS) $(EVENT_PTHREADS_CFLAGS)
+libmoneytreexe_server_a_CXXFLAGS = $(AM_CXXFLAGS) $(PIE_FLAGS)
+libmoneytreexe_server_a_SOURCES = \
   addrdb.cpp \
   addrman.cpp \
   bloom.cpp \
@@ -388,7 +388,7 @@ moneytreexed_SOURCES += moneytreexed-res.rc
 endif
 
 moneytreexed_LDADD = \
-  $(LIBBITCOIN_SERVER) \
+  $(LIBMONEYTREEXE_SERVER) \
   $(LIBBITCOIN_COMMON) \
   $(LIBUNIVALUE) \
   $(LIBBITCOIN_UTIL) \
