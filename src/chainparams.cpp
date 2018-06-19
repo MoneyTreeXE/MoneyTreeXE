@@ -136,12 +136,11 @@ public:
         
         
 
-        base58Prefixes[PUBKEY_ADDRESS] = std::vector<unsigned char>(1,0);
-        base58Prefixes[SCRIPT_ADDRESS] = std::vector<unsigned char>(1,5);
-        base58Prefixes[SECRET_KEY] =     std::vector<unsigned char>(1,128);
-        base58Prefixes[EXT_PUBLIC_KEY] = {0x04, 0x88, 0xB2, 0x1E};
-        base58Prefixes[EXT_SECRET_KEY] = {0x04, 0x88, 0xAD, 0xE4};
-
+        base58Prefixes[PUBKEY_ADDRESS] = std::vector<unsigned char>(1, 50);// 
+        base58Prefixes[SCRIPT_ADDRESS] = std::vector<unsigned char>(1, 65);// 
+        base58Prefixes[SECRET_KEY] = std::vector<unsigned char>(1, 48);// 
+        base58Prefixes[EXT_PUBLIC_KEY] = { 0x54, 0x52, 0x45, 0x45 };// 
+        base58Prefixes[EXT_SECRET_KEY] = { 0x54, 0x72, 0x65, 0x65 };// 
         bech32_hrp = "bc";
 
         vFixedSeeds = std::vector<SeedSpec6>(pnSeed6_main, pnSeed6_main + ARRAYLEN(pnSeed6_main));
@@ -216,12 +215,11 @@ public:
         
         
 
-        base58Prefixes[PUBKEY_ADDRESS] = std::vector<unsigned char>(1,111);
-        base58Prefixes[SCRIPT_ADDRESS] = std::vector<unsigned char>(1,196);
-        base58Prefixes[SECRET_KEY] =     std::vector<unsigned char>(1,239);
-        base58Prefixes[EXT_PUBLIC_KEY] = {0x04, 0x35, 0x87, 0xCF};
-        base58Prefixes[EXT_SECRET_KEY] = {0x04, 0x35, 0x83, 0x94};
-
+        base58Prefixes[PUBKEY_ADDRESS] = std::vector<unsigned char>(1, 110);// 
+        base58Prefixes[SCRIPT_ADDRESS] = std::vector<unsigned char>(1, 127);// 
+        base58Prefixes[SECRET_KEY] = std::vector<unsigned char>(1, 85);// 
+        base58Prefixes[EXT_PUBLIC_KEY] = { 0x4c, 0x45, 0x41, 0x46 };// 
+        base58Prefixes[EXT_SECRET_KEY] = { 0x4c, 0x65, 0x61, 0x66 };// 
         bech32_hrp = "tb";
 
         vFixedSeeds = std::vector<SeedSpec6>(pnSeed6_test, pnSeed6_test + ARRAYLEN(pnSeed6_test));
@@ -297,12 +295,11 @@ public:
 
         chainTxData = ChainTxData{0, 0, 0};
 
-        base58Prefixes[PUBKEY_ADDRESS] = std::vector<unsigned char>(1,111);
-        base58Prefixes[SCRIPT_ADDRESS] = std::vector<unsigned char>(1,196);
-        base58Prefixes[SECRET_KEY] =     std::vector<unsigned char>(1,239);
-        base58Prefixes[EXT_PUBLIC_KEY] = {0x04, 0x35, 0x87, 0xCF};
-        base58Prefixes[EXT_SECRET_KEY] = {0x04, 0x35, 0x83, 0x94};
-
+        base58Prefixes[PUBKEY_ADDRESS] = std::vector<unsigned char>(1, 110);// 
+        base58Prefixes[SCRIPT_ADDRESS] = std::vector<unsigned char>(1, 127);// 
+        base58Prefixes[SECRET_KEY] = std::vector<unsigned char>(1, 85);// 
+        base58Prefixes[EXT_PUBLIC_KEY] = { 0x4c, 0x45, 0x41, 0x46 };// 
+        base58Prefixes[EXT_SECRET_KEY] = { 0x4c, 0x65, 0x61, 0x66 };// 
         bech32_hrp = "bcrt";
     }
 };
