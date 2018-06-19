@@ -94,7 +94,7 @@ Examples tests are `p2p_unrequested_blocks.py`, `p2p_compactblocks.py`.
 - Comptool is a Testing framework for writing tests that compare the block/tx acceptance
 behavior of a moneytreexed against 1 or more other moneytreexed instances. It should not be used
 to write static tests with known outcomes, since that type of test is easier to write and
-maintain using the standard BitcoinTestFramework.
+maintain using the standard MoneyTreeXETestFramework.
 
 - Set the `num_nodes` variable (defined in `ComparisonTestFramework`) to start up
 1 or more nodes.  If using 1 node, then `--testbinary` can be used as a command line
