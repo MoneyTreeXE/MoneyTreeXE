@@ -112,10 +112,10 @@ public:
          * The characters are rarely used upper ASCII, not valid as UTF-8, and produce
          * a large 32-bit integer with any alignment.
          */
-        pchMessageStart[0] = 0xf9;
-        pchMessageStart[1] = 0xbe;
-        pchMessageStart[2] = 0xb4;
-        pchMessageStart[3] = 0xd9;
+        pchMessageStart[0] = 0xa3; // Main 0
+        pchMessageStart[1] = 0x84; // Main 1
+        pchMessageStart[2] = 0x7a; // Main 2
+        pchMessageStart[3] = 0xc6; // Main 3
         nDefaultPort = 5654;
         nPruneAfterHeight = 100000;
 
@@ -218,10 +218,10 @@ public:
         // By default assume that the signatures in ancestors of this block are valid.
         consensus.defaultAssumeValid = uint256S("0x0000000002e9e7b00e1f6dc5123a04aad68dd0f0968d8c7aa45f6640795c37b1"); //1135275
 
-        pchMessageStart[0] = 0x0b;
-        pchMessageStart[1] = 0x11;
-        pchMessageStart[2] = 0x09;
-        pchMessageStart[3] = 0x07;
+        pchMessageStart[0] = 0xef; // Test 0
+        pchMessageStart[1] = 0xae; // Test 1
+        pchMessageStart[2] = 0xee; // Test 2
+        pchMessageStart[3] = 0x92; // Test 3
         nDefaultPort = 15654;
         nPruneAfterHeight = 1000;
 
@@ -305,10 +305,10 @@ public:
         // By default assume that the signatures in ancestors of this block are valid.
         consensus.defaultAssumeValid = uint256S("0x00");
 
-        pchMessageStart[0] = 0xfa;
-        pchMessageStart[1] = 0xbf;
-        pchMessageStart[2] = 0xb5;
-        pchMessageStart[3] = 0xda;
+        pchMessageStart[0] = 0x19; // RegTest 0
+        pchMessageStart[1] = 0xcb; // RegTest 1
+        pchMessageStart[2] = 0x55; // RegTest 2
+        pchMessageStart[3] = 0xb4; // RegTest 3
         nDefaultPort = 25654;
         nPruneAfterHeight = 1000;
 
