@@ -1,0 +1,33 @@
+# /etc/conf.d/moneytreexed: config file for /etc/init.d/moneytreexed
+
+# Config file location
+#MONEYTREEXED_CONFIGFILE="/etc/moneytreexe/moneytreexe.conf"
+
+# What directory to write pidfile to?  (created and owned by $MONEYTREEXED_USER)
+#MONEYTREEXED_PIDDIR="/var/run/moneytreexed"
+
+# What filename to give the pidfile
+#MONEYTREEXED_PIDFILE="${MONEYTREEXED_PIDDIR}/moneytreexed.pid"
+
+# Where to write moneytreexed data (be mindful that the blockchain is large)
+#MONEYTREEXED_DATADIR="/var/lib/moneytreexed"
+
+# User and group to own moneytreexed process
+#MONEYTREEXED_USER="moneytreexe"
+#MONEYTREEXED_GROUP="moneytreexe"
+
+# Path to moneytreexed executable
+#MONEYTREEXED_BIN="/usr/bin/moneytreexed"
+
+# Nice value to run moneytreexed under
+#MONEYTREEXED_NICE=0
+
+# Additional options (avoid -conf and -datadir, use flags above)
+#MONEYTREEXED_OPTS=""
+
+# The timeout in seconds OpenRC will wait for moneytreexed to terminate
+# after a SIGTERM has been raised.
+# Note that this will be mapped as argument to start-stop-daemon's
+# '--retry' option, which means you can specify a retry schedule
+# here. For more information see man 8 start-stop-daemon.
+MONEYTREEXED_SIGTERM_TIMEOUT=60

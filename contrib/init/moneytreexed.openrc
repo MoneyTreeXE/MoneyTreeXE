@@ -1,0 +1,92 @@
+#!/sbin/openrc-run
+
+# backward compatibility for existing gentoo layout 
+#
+if [ -d "/var/lib/moneytreexe/.moneytreexe" ]; then
+	MONEYTREEXED_DEFAULT_DATADIR="/var/lib/moneytreexe/.moneytreexe"
+else
+	MONEYTREEXED_DEFAULT_DATADIR="/var/lib/moneytreexed"
+fi
+
+MONEYTREEXED_CONFIGFILE=${MONEYTREEXED_CONFIGFILE:-/etc/moneytreexe/moneytreexe.conf}
+MONEYTREEXED_PIDDIR=${MONEYTREEXED_PIDDIR:-/var/run/moneytreexed}
+MONEYTREEXED_PIDFILE=${MONEYTREEXED_PIDFILE:-${MONEYTREEXED_PIDDIR}/moneytreexed.pid}
+MONEYTREEXED_DATADIR=${MONEYTREEXED_DATADIR:-${MONEYTREEXED_DEFAULT_DATADIR}}
+MONEYTREEXED_USER=${MONEYTREEXED_USER:-${BITCOIN_USER:-moneytreexe}}
+MONEYTREEXED_GROUP=${MONEYTREEXED_GROUP:-moneytreexe}
+MONEYTREEXED_BIN=${MONEYTREEXED_BIN:-/usr/bin/moneytreexed}
+MONEYTREEXED_NICE=${MONEYTREEXED_NICE:-${NICELEVEL:-0}}
+MONEYTREEXED_OPTS="${MONEYTREEXED_OPTS:-${BITCOIN_OPTS}}"
+
+name="MoneyTreeXE Core Daemon"
+description="MoneyTreeXE cryptocurrency P2P network daemon"
+
+command="/usr/bin/moneytreexed"
+command_args="-pid=\"${MONEYTREEXED_PIDFILE}\" \
+		-conf=\"${MONEYTREEXED_CONFIGFILE}\" \
+		-datadir=\"${MONEYTREEXED_DATADIR}\" \
+		-daemon \
+		${MONEYTREEXED_OPTS}"
+
+required_files="${MONEYTREEXED_CONFIGFILE}"
+start_stop_daemon_args="-u ${MONEYTREEXED_USER} \
+			-N ${MONEYTREEXED_NICE} -w 2000"
+pidfile="${MONEYTREEXED_PIDFILE}"
+
+# The retry schedule to use when stopping the daemon. Could be either
+# a timeout in seconds or multiple signal/timeout pairs (like
+# "SIGKILL/180 SIGTERM/300")
+retry="${MONEYTREEXED_SIGTERM_TIMEOUT}"
+
+depend() {
+	need localmount net
+}
+
+# verify
+# 1) that the datadir exists and is writable (or create it)
+# 2) that a directory for the pid exists and is writable
+# 3) ownership and permissions on the config file
+start_pre() {
+	checkpath \
+	-d \
+	--mode 0750 \
+	--owner "${MONEYTREEXED_USER}:${MONEYTREEXED_GROUP}" \
+	"${MONEYTREEXED_DATADIR}"
+
+	checkpath \
+	-d \
+	--mode 0755 \
+	--owner "${MONEYTREEXED_USER}:${MONEYTREEXED_GROUP}" \
+	"${MONEYTREEXED_PIDDIR}"
+
+	checkpath -f \
+	-o ${MONEYTREEXED_USER}:${MONEYTREEXED_GROUP} \
+	-m 0660 \
+	${MONEYTREEXED_CONFIGFILE}
+
+	checkconfig || return 1
+}
+
+checkconfig()
+{
+	if ! grep -qs '^rpcpassword=' "${MONEYTREEXED_CONFIGFILE}" ; then
+		eerror ""
+		eerror "ERROR: You must set a secure rpcpassword to run moneytreexed."
+		eerror "The setting must appear in ${MONEYTREEXED_CONFIGFILE}"
+		eerror ""
+		eerror "This password is security critical to securing wallets "
+		eerror "and must not be the same as the rpcuser setting."
+		eerror "You can generate a suitable random password using the following "
+		eerror "command from the shell:"
+		eerror ""
+		eerror "bash -c 'tr -dc a-zA-Z0-9 < /dev/urandom | head -c32 && echo'"
+		eerror ""
+		eerror "It is recommended that you also set alertnotify so you are "
+		eerror "notified of problems:"
+		eerror ""
+		eerror "ie: alertnotify=echo %%s | mail -s \"MoneyTreeXE Alert\"" \
+			"admin@foo.com"
+		eerror ""
+		return 1
+	fi
+}

@@ -540,7 +540,7 @@ WId BitcoinApplication::getMainWinId() const
     return window->winId();
 }
 
-#ifndef BITCOIN_QT_TEST
+#ifndef MONEYTREEXE_QT_TEST
 int main(int argc, char *argv[])
 {
     SetupEnvironment();
@@ -615,7 +615,7 @@ int main(int argc, char *argv[])
     if (!Intro::pickDataDirectory())
         return EXIT_SUCCESS;
 
-    /// 6. Determine availability of data directory and parse bitcoin.conf
+    /// 6. Determine availability of data directory and parse moneytreexe.conf
     /// - Do not call GetDataDir(true) before this step finishes
     if (!fs::is_directory(GetDataDir(false)))
     {
@@ -725,4 +725,4 @@ int main(int argc, char *argv[])
     }
     return rv;
 }
-#endif // BITCOIN_QT_TEST
+#endif // MONEYTREEXE_QT_TEST

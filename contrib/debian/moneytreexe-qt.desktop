@@ -1,0 +1,14 @@
+[Desktop Entry]
+Version=1.0
+Name=MoneyTreeXE Core
+Comment=Connect to the MoneyTreeXE P2P Network
+Comment[de]=Verbinde mit dem MoneyTreeXE peer-to-peer Netzwerk
+Comment[fr]=MoneyTreeXE, monnaie virtuelle cryptographique pair à pair
+Comment[tr]=MoneyTreeXE, eşten eşe kriptografik sanal para birimi
+Exec=moneytreexe-qt %u
+Terminal=false
+Type=Application
+Icon=moneytreexe128
+MimeType=x-scheme-handler/moneytreexe;
+Categories=Office;Finance;
+StartupWMClass=MoneyTreeXE-Qt

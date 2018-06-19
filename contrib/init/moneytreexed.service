@@ -1,0 +1,25 @@
+# It is not recommended to modify this file in-place, because it will
+# be overwritten during package upgrades. If you want to add further
+# options or overwrite existing ones then use
+# $ systemctl edit moneytreexed.service
+# See "man systemd.service" for details.
+
+# Note that almost all daemon options could be specified in
+# /etc/moneytreexe/moneytreexe.conf
+
+[Unit]
+Description=MoneyTreeXE daemon
+After=network.target
+
+[Service]
+ExecStart=/usr/bin/moneytreexed -daemon -conf=/etc/moneytreexe/moneytreexe.conf -pid=/run/moneytreexed/moneytreexed.pid
+# Creates /run/moneytreexed owned by moneytreexe
+RuntimeDirectory=moneytreexed
+User=moneytreexe
+Type=forking
+PIDFile=/run/moneytreexed/moneytreexed.pid
+Restart=on-failure
+PrivateTmp=true
+
+[Install]
+WantedBy=multi-user.target

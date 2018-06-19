@@ -1,0 +1,6 @@
+usr/local/bin/moneytreexe-qt usr/bin
+share/pixmaps/moneytreexe32.xpm usr/share/pixmaps
+share/pixmaps/moneytreexe16.xpm usr/share/pixmaps
+share/pixmaps/moneytreexe128.png usr/share/pixmaps
+debian/moneytreexe-qt.desktop usr/share/applications
+debian/moneytreexe-qt.protocol usr/share/kde4/services/
