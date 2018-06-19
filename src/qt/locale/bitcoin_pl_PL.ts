@@ -62,11 +62,11 @@
         <translation>Adresy do odbierania</translation>
     </message>
     <message>
-        <source>These are your Bitcoin addresses for sending payments. Always check the amount and the receiving address before sending coins.</source>
+        <source>These are your MoneyTreeXE addresses for sending payments. Always check the amount and the receiving address before sending coins.</source>
         <translation>To są Twoje adresy Bitcoin do wysyłania płatności. Zawsze sprawdzaj kwotę oraz adres odbioru zanim prześlesz monety.</translation>
     </message>
     <message>
-        <source>These are your Bitcoin addresses for receiving payments. It is recommended to use a new receiving address for each transaction.</source>
+        <source>These are your MoneyTreeXE addresses for receiving payments. It is recommended to use a new receiving address for each transaction.</source>
         <translation>To są Twoje adresy Bitcoin do otrzymywania płatności. Zalecane jest używać nowego adresu do każdej transakcji. </translation>
     </message>
     <message>
@@ -338,7 +338,7 @@
         <translation>Reindeksowanie bloków na dysku...</translation>
     </message>
     <message>
-        <source>Send coins to a Bitcoin address</source>
+        <source>Send coins to a MoneyTreeXE address</source>
         <translation>Wyślij monety na adres Bitcoin</translation>
     </message>
     <message>
@@ -390,11 +390,11 @@
         <translation>Zaszyfruj prywatne klucze które należą do Twojego portfela</translation>
     </message>
     <message>
-        <source>Sign messages with your Bitcoin addresses to prove you own them</source>
+        <source>Sign messages with your MoneyTreeXE addresses to prove you own them</source>
         <translation>Podpisz wiadomość z Twoimi adresami Bitcoin żeby udowodnić że je posiadasz</translation>
     </message>
     <message>
-        <source>Verify messages to ensure they were signed with specified Bitcoin addresses</source>
+        <source>Verify messages to ensure they were signed with specified MoneyTreeXE addresses</source>
         <translation>Zweryfikuj wiadomość żeby się upewnić że zostały podpisane ze specyficznym adresem Bitcoin</translation>
     </message>
     <message>

@@ -90,7 +90,7 @@
 <context>
     <name>BitcoinGUI</name>
     <message>
-        <source>Send coins to a Bitcoin address</source>
+        <source>Send coins to a MoneyTreeXE address</source>
         <translation>ផ្ញើកាក់ទៅកាន់ អាសយដ្ឋាន Bitcoin មួយ</translation>
     </message>
     <message>

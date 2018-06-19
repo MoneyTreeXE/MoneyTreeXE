@@ -62,11 +62,11 @@
         <translation>Alınan Adresler</translation>
     </message>
     <message>
-        <source>These are your Bitcoin addresses for sending payments. Always check the amount and the receiving address before sending coins.</source>
+        <source>These are your MoneyTreeXE addresses for sending payments. Always check the amount and the receiving address before sending coins.</source>
         <translation>Bunlar ödeme göndermek için gereken Bitcoin adreslerinizdir. Para göndermeden önce her zaman miktarı ve alıcı adresi kontrol edin.</translation>
     </message>
     <message>
-        <source>These are your Bitcoin addresses for receiving payments. It is recommended to use a new receiving address for each transaction.</source>
+        <source>These are your MoneyTreeXE addresses for receiving payments. It is recommended to use a new receiving address for each transaction.</source>
         <translation>Bunlar ödeme almak için kullanılacak Bitcoin adreslerinizdir. Her işlem için yeni bir ödeme alma adresi kullanılması tavsiye edilir.</translation>
     </message>
     <message>
@@ -286,7 +286,7 @@
         <translation>Bloklar disk üzerinde yeniden indeksleniyor...</translation>
     </message>
     <message>
-        <source>Send coins to a Bitcoin address</source>
+        <source>Send coins to a MoneyTreeXE address</source>
         <translation>Bitcoin adresine madeni para gönderin</translation>
     </message>
     <message>
@@ -462,7 +462,7 @@
         <translation>Gönderim adresini düzenleyin</translation>
     </message>
     <message>
-        <source>The entered address "%1" is not a valid Bitcoin address.</source>
+        <source>The entered address "%1" is not a valid MoneyTreeXE address.</source>
         <translation>Girilen adres "%1" Bitcoin adresiyle eşleşmiyor.</translation>
     </message>
     <message>
@@ -733,7 +733,7 @@
 <context>
     <name>QObject</name>
     <message>
-        <source>Enter a Bitcoin address (e.g. %1)</source>
+        <source>Enter a MoneyTreeXE address (e.g. %1)</source>
         <translation>Bitcoin adresinizi girin (örneğin %1)</translation>
     </message>
     <message>
@@ -1110,7 +1110,7 @@
         <translation>Coin gönderimini onaylayın</translation>
     </message>
     <message>
-        <source>Warning: Invalid Bitcoin address</source>
+        <source>Warning: Invalid MoneyTreeXE address</source>
         <translation>Uyarı: Hatalı Bitcoin adresi</translation>
     </message>
     <message>

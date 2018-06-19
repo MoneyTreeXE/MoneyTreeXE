@@ -314,7 +314,7 @@ UniValue importaddress(const JSONRPCRequest& request)
             std::vector<unsigned char> data(ParseHex(request.params[0].get_str()));
             ImportScript(pwallet, CScript(data.begin(), data.end()), strLabel, fP2SH);
         } else {
-            throw JSONRPCError(RPC_INVALID_ADDRESS_OR_KEY, "Invalid Bitcoin address or script");
+            throw JSONRPCError(RPC_INVALID_ADDRESS_OR_KEY, "Invalid MoneyTreeXE address or script");
         }
     }
     if (fRescan)
@@ -633,7 +633,7 @@ UniValue dumpprivkey(const JSONRPCRequest& request)
             "\nReveals the private key corresponding to 'address'.\n"
             "Then the importprivkey can be used with this output\n"
             "\nArguments:\n"
-            "1. \"address\"   (string, required) The bitcoin address for the private key\n"
+            "1. \"address\"   (string, required) The MoneyTreeXE address for the private key\n"
             "\nResult:\n"
             "\"key\"                (string) The private key\n"
             "\nExamples:\n"
@@ -649,7 +649,7 @@ UniValue dumpprivkey(const JSONRPCRequest& request)
     std::string strAddress = request.params[0].get_str();
     CTxDestination dest = DecodeDestination(strAddress);
     if (!IsValidDestination(dest)) {
-        throw JSONRPCError(RPC_INVALID_ADDRESS_OR_KEY, "Invalid Bitcoin address");
+        throw JSONRPCError(RPC_INVALID_ADDRESS_OR_KEY, "Invalid MoneyTreeXE address");
     }
     auto keyid = GetKeyForDestination(*pwallet, dest);
     if (keyid.IsNull()) {

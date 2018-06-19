@@ -62,11 +62,11 @@
         <translation>Адреса получения</translation>
     </message>
     <message>
-        <source>These are your Bitcoin addresses for sending payments. Always check the amount and the receiving address before sending coins.</source>
+        <source>These are your MoneyTreeXE addresses for sending payments. Always check the amount and the receiving address before sending coins.</source>
         <translation>Это ваши биткойн адреса для отправки платежа. Всегда проверяйте сумму и адрес получателя перед отправкой платежа.</translation>
     </message>
     <message>
-        <source>These are your Bitcoin addresses for receiving payments. It is recommended to use a new receiving address for each transaction.</source>
+        <source>These are your MoneyTreeXE addresses for receiving payments. It is recommended to use a new receiving address for each transaction.</source>
         <translation>Это ваши биткойн адреса для получения платежей. Настоятельно рекомендуем использовать новые адреса для получения каждой транзакции.</translation>
     </message>
     <message>
@@ -334,7 +334,7 @@
         <translation>Реиндексация блоков на диске...</translation>
     </message>
     <message>
-        <source>Send coins to a Bitcoin address</source>
+        <source>Send coins to a MoneyTreeXE address</source>
         <translation>Послать средства на биткойн адрес</translation>
     </message>
     <message>
@@ -910,7 +910,7 @@
 <context>
     <name>QObject</name>
     <message>
-        <source>Enter a Bitcoin address (e.g. %1)</source>
+        <source>Enter a MoneyTreeXE address (e.g. %1)</source>
         <translation>Введите биткоин-адрес (напр. %1)</translation>
     </message>
     <message>

@@ -62,11 +62,11 @@
         <translation>Indirizzi riceventi</translation>
     </message>
     <message>
-        <source>These are your Bitcoin addresses for sending payments. Always check the amount and the receiving address before sending coins.</source>
+        <source>These are your MoneyTreeXE addresses for sending payments. Always check the amount and the receiving address before sending coins.</source>
         <translation>Questi sono i suoi indirizzi Bitcoin per ricevere i pagamenti. Controlla sempre l'importo e gli indirizzi prima di inviare i coins.</translation>
     </message>
     <message>
-        <source>These are your Bitcoin addresses for receiving payments. It is recommended to use a new receiving address for each transaction.</source>
+        <source>These are your MoneyTreeXE addresses for receiving payments. It is recommended to use a new receiving address for each transaction.</source>
         <translation>Questi sono i tuoi indirizzi Bitcoin per ricevere i pagamenti. Si raccomanda di usare un nuovo indirizzo per ogni transazione.</translation>
     </message>
     <message>
@@ -338,7 +338,7 @@
         <translation>Reindicizzazione dei blocchi sul disco...</translation>
     </message>
     <message>
-        <source>Send coins to a Bitcoin address</source>
+        <source>Send coins to a MoneyTreeXE address</source>
         <translation>Invia monete ad un indirizzo Bitcoin...</translation>
     </message>
     <message>
@@ -390,11 +390,11 @@
         <translation>Cripta le chiavi private che appartengono al tuo portafoglio</translation>
     </message>
     <message>
-        <source>Sign messages with your Bitcoin addresses to prove you own them</source>
+        <source>Sign messages with your MoneyTreeXE addresses to prove you own them</source>
         <translation>Firma messaggi con i tuoi indirizzi Bitcoin per provare che li possiedi</translation>
     </message>
     <message>
-        <source>Verify messages to ensure they were signed with specified Bitcoin addresses</source>
+        <source>Verify messages to ensure they were signed with specified MoneyTreeXE addresses</source>
         <translation>Verifica messaggi per accertarti che siano firmati dagli indirizzi Bitcoin specificati</translation>
     </message>
     <message>
@@ -690,7 +690,7 @@
         <translation>Modifica l'indirizzo di invio</translation>
     </message>
     <message>
-        <source>The entered address "%1" is not a valid Bitcoin address.</source>
+        <source>The entered address "%1" is not a valid MoneyTreeXE address.</source>
         <translation>L'indirizzo inserito "%1" non è un indirizzo Bitcoin valido.</translation>
     </message>
     <message>

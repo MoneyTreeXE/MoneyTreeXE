@@ -62,11 +62,11 @@
         <translation>S'estan rebent les adreces</translation>
     </message>
     <message>
-        <source>These are your Bitcoin addresses for sending payments. Always check the amount and the receiving address before sending coins.</source>
+        <source>These are your MoneyTreeXE addresses for sending payments. Always check the amount and the receiving address before sending coins.</source>
         <translation>Estes són les vostres adreces de Bitcoin per enviar els pagaments. Sempre reviseu l'import i l'adreça del destinatari abans de transferir monedes.</translation>
     </message>
     <message>
-        <source>These are your Bitcoin addresses for receiving payments. It is recommended to use a new receiving address for each transaction.</source>
+        <source>These are your MoneyTreeXE addresses for receiving payments. It is recommended to use a new receiving address for each transaction.</source>
         <translation>Estes són les vostres adreces Bitcoin per rebre pagaments. Es recomana utilitzar una adreça nova de recepció per a cada transacció.</translation>
     </message>
     <message>
@@ -298,7 +298,7 @@
         <translation>S'estan reindexant els blocs al disc...</translation>
     </message>
     <message>
-        <source>Send coins to a Bitcoin address</source>
+        <source>Send coins to a MoneyTreeXE address</source>
         <translation>Envia monedes a una adreça Bitcoin</translation>
     </message>
     <message>
@@ -350,11 +350,11 @@
         <translation>Encripta les claus privades pertanyents al moneder</translation>
     </message>
     <message>
-        <source>Sign messages with your Bitcoin addresses to prove you own them</source>
+        <source>Sign messages with your MoneyTreeXE addresses to prove you own them</source>
         <translation>Signa el missatges amb la seua adreça de Bitcoin per provar que les poseeixes</translation>
     </message>
     <message>
-        <source>Verify messages to ensure they were signed with specified Bitcoin addresses</source>
+        <source>Verify messages to ensure they were signed with specified MoneyTreeXE addresses</source>
         <translation>Verifiqueu els missatges per assegurar-vos que han estat signats amb una adreça Bitcoin específica.</translation>
     </message>
     <message>
@@ -662,7 +662,7 @@
         <translation>Edita les adreces d'enviament</translation>
     </message>
     <message>
-        <source>The entered address "%1" is not a valid Bitcoin address.</source>
+        <source>The entered address "%1" is not a valid MoneyTreeXE address.</source>
         <translation>L'adreça introduïda «%1» no és una adreça de Bitcoin vàlida.</translation>
     </message>
     <message>
@@ -1082,7 +1082,7 @@
         <translation>Adreça de pagament no vàlida %1</translation>
     </message>
     <message>
-        <source>URI cannot be parsed! This can be caused by an invalid Bitcoin address or malformed URI parameters.</source>
+        <source>URI cannot be parsed! This can be caused by an invalid MoneyTreeXE address or malformed URI parameters.</source>
         <translation>L'URI no pot ser analitzat! Això pot ser a causa d'una adreça de Bitcoin no vàlida o per paràmetres URI amb mal format.</translation>
     </message>
     <message>
@@ -1176,7 +1176,7 @@
         <translation>Import</translation>
     </message>
     <message>
-        <source>Enter a Bitcoin address (e.g. %1)</source>
+        <source>Enter a MoneyTreeXE address (e.g. %1)</source>
         <translation>Introduïu una adreça de Bitcoin (p. ex. %1)</translation>
     </message>
     <message>
@@ -1797,7 +1797,7 @@
         <translation>La sol·licitud de pagament ha vençut.</translation>
     </message>
     <message>
-        <source>Warning: Invalid Bitcoin address</source>
+        <source>Warning: Invalid MoneyTreeXE address</source>
         <translation>Avís: adreça Bitcoin no vàlida</translation>
     </message>
     <message>
@@ -1832,7 +1832,7 @@
         <translation>Això és un pagament normal.</translation>
     </message>
     <message>
-        <source>The Bitcoin address to send the payment to</source>
+        <source>The MoneyTreeXE address to send the payment to</source>
         <translation>L'adreça Bitcoin on enviar el pagament</translation>
     </message>
     <message>
@@ -1921,7 +1921,7 @@
         <translation>Podeu signar missatges/acords amb les vostres adreces per provar que rebeu les bitcoins que s'hi envien. Aneu amb compte no signar res que siga vague o aleatori, perquè en alguns atacs de suplantació es pot provar que hi signeu la vostra identitat. Només signeu aquelles declaracions completament detallades en què hi esteu d'acord. </translation>
     </message>
     <message>
-        <source>The Bitcoin address to sign the message with</source>
+        <source>The MoneyTreeXE address to sign the message with</source>
         <translation>L'adreça Bitcoin amb què signar el missatge</translation>
     </message>
     <message>
@@ -1953,7 +1953,7 @@
         <translation>Copia la signatura actual al porta-retalls del sistema</translation>
     </message>
     <message>
-        <source>Sign the message to prove you own this Bitcoin address</source>
+        <source>Sign the message to prove you own this MoneyTreeXE address</source>
         <translation>Signa el missatge per provar que ets propietari d'esta adreça Bitcoin</translation>
     </message>
     <message>
@@ -1977,11 +1977,11 @@
         <translation>Introduïu l'adreça del receptor, el missatge (assegureu-vos de copiar els salts de línia, espais, tabuladors, etc. exactament) i signatura de sota per verificar el missatge. Tingueu cura de no llegir més en la signatura del que està al missatge signat, per evitar ser enganyat per un atac d'home-en-el-mig. Tingueu en compte que això només demostra que la part que signa rep amb l'adreça, i no es pot provar l'enviament de qualsevol transacció!</translation>
     </message>
     <message>
-        <source>The Bitcoin address the message was signed with</source>
+        <source>The MoneyTreeXE address the message was signed with</source>
         <translation>L'adreça Bitcoin amb què va ser signat el missatge</translation>
     </message>
     <message>
-        <source>Verify the message to ensure it was signed with the specified Bitcoin address</source>
+        <source>Verify the message to ensure it was signed with the specified MoneyTreeXE address</source>
         <translation>Verificar el missatge per assegurar-se que ha estat signat amb una adreça Bitcoin específica</translation>
     </message>
     <message>

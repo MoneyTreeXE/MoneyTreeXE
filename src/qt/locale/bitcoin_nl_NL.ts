@@ -62,11 +62,11 @@
         <translation>Ontvangstadres</translation>
     </message>
     <message>
-        <source>These are your Bitcoin addresses for sending payments. Always check the amount and the receiving address before sending coins.</source>
+        <source>These are your MoneyTreeXE addresses for sending payments. Always check the amount and the receiving address before sending coins.</source>
         <translation>Dit zijn uw Bitcoin adressen voor het versturen van betalingen. Controleer altijd het bedrag en het ontvangstadres voordat u munten verstuurd.</translation>
     </message>
     <message>
-        <source>These are your Bitcoin addresses for receiving payments. It is recommended to use a new receiving address for each transaction.</source>
+        <source>These are your MoneyTreeXE addresses for receiving payments. It is recommended to use a new receiving address for each transaction.</source>
         <translation>Dit zijn uw Bitcoin adressen voor het ontvangen van betalingen. Het wordt aanbevolen om voor elke transactie een nieuw ontvangstadres te gebruiken.</translation>
     </message>
     <message>
@@ -338,7 +338,7 @@
         <translation>Blokken op schijf herindexeren...</translation>
     </message>
     <message>
-        <source>Send coins to a Bitcoin address</source>
+        <source>Send coins to a MoneyTreeXE address</source>
         <translation>Verstuur coins naar een Bitcoin adres</translation>
     </message>
     <message>
@@ -390,11 +390,11 @@
         <translation>Versleutel de privé sleutels die bij je portemonnee horen</translation>
     </message>
     <message>
-        <source>Sign messages with your Bitcoin addresses to prove you own them</source>
+        <source>Sign messages with your MoneyTreeXE addresses to prove you own them</source>
         <translation>Signeer berichten met je Bitcoin adres om te bewijzen dat ze van jou zijn</translation>
     </message>
     <message>
-        <source>Verify messages to ensure they were signed with specified Bitcoin addresses</source>
+        <source>Verify messages to ensure they were signed with specified MoneyTreeXE addresses</source>
         <translation>Verifieer berichten om er zeker van te zijn dat ze met specifieke Bitcoin adressen ondertekent zijn</translation>
     </message>
     <message>

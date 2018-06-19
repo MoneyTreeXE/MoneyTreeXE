@@ -80,12 +80,12 @@
     </message>
     <message>
         <location line="+7"/>
-        <source>These are your Bitcoin addresses for sending payments. Always check the amount and the receiving address before sending coins.</source>
+        <source>These are your MoneyTreeXE addresses for sending payments. Always check the amount and the receiving address before sending coins.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location line="+4"/>
-        <source>These are your Bitcoin addresses for receiving payments. It is recommended to use a new receiving address for each transaction.</source>
+        <source>These are your MoneyTreeXE addresses for receiving payments. It is recommended to use a new receiving address for each transaction.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -435,8 +435,8 @@
     </message>
     <message>
         <location line="-511"/>
-        <source>Send coins to a Bitcoin address</source>
-        <translation>Send coins to a Bitcoin address</translation>
+        <source>Send coins to a MoneyTreeXE address</source>
+        <translation>Send coins to a MoneyTreeXE address</translation>
     </message>
     <message>
         <location line="+67"/>
@@ -500,13 +500,13 @@
     </message>
     <message>
         <location line="+7"/>
-        <source>Sign messages with your Bitcoin addresses to prove you own them</source>
-        <translation>Sign messages with your Bitcoin addresses to prove you own them</translation>
+        <source>Sign messages with your MoneyTreeXE addresses to prove you own them</source>
+        <translation>Sign messages with your MoneyTreeXE addresses to prove you own them</translation>
     </message>
     <message>
         <location line="+2"/>
-        <source>Verify messages to ensure they were signed with specified Bitcoin addresses</source>
-        <translation>Verify messages to ensure they were signed with specified Bitcoin addresses</translation>
+        <source>Verify messages to ensure they were signed with specified MoneyTreeXE addresses</source>
+        <translation>Verify messages to ensure they were signed with specified MoneyTreeXE addresses</translation>
     </message>
     <message>
         <location line="+58"/>
@@ -939,7 +939,7 @@
     </message>
     <message>
         <location line="+72"/>
-        <source>The entered address &quot;%1&quot; is not a valid Bitcoin address.</source>
+        <source>The entered address &quot;%1&quot; is not a valid MoneyTreeXE address.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -1704,7 +1704,7 @@
     </message>
     <message>
         <location line="+8"/>
-        <source>URI cannot be parsed! This can be caused by an invalid Bitcoin address or malformed URI parameters.</source>
+        <source>URI cannot be parsed! This can be caused by an invalid MoneyTreeXE address or malformed URI parameters.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -1836,7 +1836,7 @@
     </message>
     <message>
         <location filename="../guiutil.cpp" line="+130"/>
-        <source>Enter a Bitcoin address (e.g. %1)</source>
+        <source>Enter a MoneyTreeXE address (e.g. %1)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -2951,7 +2951,7 @@
     </message>
     <message>
         <location line="+101"/>
-        <source>Warning: Invalid Bitcoin address</source>
+        <source>Warning: Invalid MoneyTreeXE address</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -3006,7 +3006,7 @@
     </message>
     <message>
         <location line="+39"/>
-        <source>The Bitcoin address to send the payment to</source>
+        <source>The MoneyTreeXE address to send the payment to</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -3130,7 +3130,7 @@
     </message>
     <message>
         <location line="+18"/>
-        <source>The Bitcoin address to sign the message with</source>
+        <source>The MoneyTreeXE address to sign the message with</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -3172,8 +3172,8 @@
     </message>
     <message>
         <location line="+21"/>
-        <source>Sign the message to prove you own this Bitcoin address</source>
-        <translation>Sign the message to prove you own this Bitcoin address</translation>
+        <source>Sign the message to prove you own this MoneyTreeXE address</source>
+        <translation>Sign the message to prove you own this MoneyTreeXE address</translation>
     </message>
     <message>
         <location line="+3"/>
@@ -3203,13 +3203,13 @@
     </message>
     <message>
         <location line="+21"/>
-        <source>The Bitcoin address the message was signed with</source>
+        <source>The MoneyTreeXE address the message was signed with</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location line="+37"/>
-        <source>Verify the message to ensure it was signed with the specified Bitcoin address</source>
-        <translation>Verify the message to ensure it was signed with the specified Bitcoin address</translation>
+        <source>Verify the message to ensure it was signed with the specified MoneyTreeXE address</source>
+        <translation>Verify the message to ensure it was signed with the specified MoneyTreeXE address</translation>
     </message>
     <message>
         <location line="+3"/>

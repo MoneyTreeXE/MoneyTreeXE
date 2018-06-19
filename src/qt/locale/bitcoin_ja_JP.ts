@@ -62,11 +62,11 @@
         <translation>アドレス受信</translation>
     </message>
     <message>
-        <source>These are your Bitcoin addresses for sending payments. Always check the amount and the receiving address before sending coins.</source>
+        <source>These are your MoneyTreeXE addresses for sending payments. Always check the amount and the receiving address before sending coins.</source>
         <translation>支払送信するためのビットコインアドレスです。コインを送付する前に、いつも残高と受信アドレスの確認をしてください。</translation>
     </message>
     <message>
-        <source>These are your Bitcoin addresses for receiving payments. It is recommended to use a new receiving address for each transaction.</source>
+        <source>These are your MoneyTreeXE addresses for receiving payments. It is recommended to use a new receiving address for each transaction.</source>
         <translation>支払の受信をするためのビットコインアドレスです。それぞれの処理に新規に受信アドレスを使用することを推奨します。</translation>
     </message>
     <message>
@@ -338,7 +338,7 @@
         <translation>ディスクのブロックの再インデックス中...</translation>
     </message>
     <message>
-        <source>Send coins to a Bitcoin address</source>
+        <source>Send coins to a MoneyTreeXE address</source>
         <translation>ビットコインアドレスにコインを送信</translation>
     </message>
     <message>
@@ -390,11 +390,11 @@
         <translation>財布に属するプライベートキーの暗号化</translation>
     </message>
     <message>
-        <source>Sign messages with your Bitcoin addresses to prove you own them</source>
+        <source>Sign messages with your MoneyTreeXE addresses to prove you own them</source>
         <translation>所有者であることを証明するためにビットコインアドレスのメッセージにサイン</translation>
     </message>
     <message>
-        <source>Verify messages to ensure they were signed with specified Bitcoin addresses</source>
+        <source>Verify messages to ensure they were signed with specified MoneyTreeXE addresses</source>
         <translation>署名された特定のビットコインアドレスを確認するために、メッセージを確認</translation>
     </message>
     <message>
@@ -734,7 +734,7 @@
         <translation>送信アドレスの編集</translation>
     </message>
     <message>
-        <source>The entered address "%1" is not a valid Bitcoin address.</source>
+        <source>The entered address "%1" is not a valid MoneyTreeXE address.</source>
         <translation>入寮されたアドレス "%1" は正当なビットコインアドレスではありません。</translation>
     </message>
     <message>
@@ -1262,7 +1262,7 @@
         <translation>無効な支払アドレス %1</translation>
     </message>
     <message>
-        <source>URI cannot be parsed! This can be caused by an invalid Bitcoin address or malformed URI parameters.</source>
+        <source>URI cannot be parsed! This can be caused by an invalid MoneyTreeXE address or malformed URI parameters.</source>
         <translation>URLはパースできませんでした! 原因はビットコインアドレスが無効であるか、URIパラメータの形式が間違っている可能性があります。</translation>
     </message>
     <message>
@@ -1356,7 +1356,7 @@
         <translation>残高</translation>
     </message>
     <message>
-        <source>Enter a Bitcoin address (e.g. %1)</source>
+        <source>Enter a MoneyTreeXE address (e.g. %1)</source>
         <translation>ビットコインアドレスの入力 (例 %1)</translation>
     </message>
     <message>
@@ -2121,7 +2121,7 @@
         <translation>%1の必須料金のみ支払う</translation>
     </message>
     <message>
-        <source>Warning: Invalid Bitcoin address</source>
+        <source>Warning: Invalid MoneyTreeXE address</source>
         <translation>注意: 無効なビットコインアドレス</translation>
     </message>
     <message>
@@ -2164,7 +2164,7 @@
         <translation>これは通常の支払です。</translation>
     </message>
     <message>
-        <source>The Bitcoin address to send the payment to</source>
+        <source>The MoneyTreeXE address to send the payment to</source>
         <translation>支払に送信するビットコインアドレス</translation>
     </message>
     <message>
@@ -2257,7 +2257,7 @@
         <translation>送信されたビットコインを受信できることを証明するために、アドレスのメッセージや同意事項に署名できます。フィッシング攻撃が署名を利用する可能性があるので、署名が曖昧やランダムでないことに注意してください。詳細な明細のみに署名されます。</translation>
     </message>
     <message>
-        <source>The Bitcoin address to sign the message with</source>
+        <source>The MoneyTreeXE address to sign the message with</source>
         <translation>メッセージ署名するためのビットコインアドレス</translation>
     </message>
     <message>
@@ -2289,7 +2289,7 @@
         <translation>システムのクリップボードへ現在の署名をコピー</translation>
     </message>
     <message>
-        <source>Sign the message to prove you own this Bitcoin address</source>
+        <source>Sign the message to prove you own this MoneyTreeXE address</source>
         <translation>ビットコインアドレスを証明するために、メッセージに署名</translation>
     </message>
     <message>
@@ -2313,11 +2313,11 @@
         <translation>以下のメッセージを確認して、受信者のアドレス、メッセージ（タブやすスペースなどを正確にこぴーしてください）、署名を入力してください。中間の攻撃者からのアタックを避けるために、署名されていないメッセージを読まないように注意してください。署名はアドレスと受信を証明することはできますが、送信者の処理を証明できないことに注意してください。</translation>
     </message>
     <message>
-        <source>The Bitcoin address the message was signed with</source>
+        <source>The MoneyTreeXE address the message was signed with</source>
         <translation>メッセージのビットコインアドレスはサインされています</translation>
     </message>
     <message>
-        <source>Verify the message to ensure it was signed with the specified Bitcoin address</source>
+        <source>Verify the message to ensure it was signed with the specified MoneyTreeXE address</source>
         <translation>特定のビットコインアドレスと署名されているメッセージであることを確認してください。</translation>
     </message>
     <message>

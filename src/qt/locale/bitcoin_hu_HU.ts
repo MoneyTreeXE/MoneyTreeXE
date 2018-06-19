@@ -62,11 +62,11 @@
         <translation>Fogadó címek</translation>
     </message>
     <message>
-        <source>These are your Bitcoin addresses for sending payments. Always check the amount and the receiving address before sending coins.</source>
+        <source>These are your MoneyTreeXE addresses for sending payments. Always check the amount and the receiving address before sending coins.</source>
         <translation>Ezek az Ön kifizetéseinek küldésekor használandó Bitcoin-címek. Fizetés indítása előtt mindig ellenőrizze az összeget és a fogadó címet!</translation>
     </message>
     <message>
-        <source>These are your Bitcoin addresses for receiving payments. It is recommended to use a new receiving address for each transaction.</source>
+        <source>These are your MoneyTreeXE addresses for receiving payments. It is recommended to use a new receiving address for each transaction.</source>
         <translation>Ezek az Ön fizetéseinek fogadásakor használandó Bitcoin-címek. Célszerű minden tranzakcióhoz új fogadó címet használni.</translation>
     </message>
     <message>
@@ -342,7 +342,7 @@
         <translation>A blokkok újraindexelése folyik a merevlemezen...</translation>
     </message>
     <message>
-        <source>Send coins to a Bitcoin address</source>
+        <source>Send coins to a MoneyTreeXE address</source>
         <translation>Érmék küldése egy Bitcoin címre</translation>
     </message>
     <message>
@@ -394,11 +394,11 @@
         <translation>Tárcájához tartozó privát kulcsok titkosítása</translation>
     </message>
     <message>
-        <source>Sign messages with your Bitcoin addresses to prove you own them</source>
+        <source>Sign messages with your MoneyTreeXE addresses to prove you own them</source>
         <translation>Írja alá az üzeneteit a Bitcoin címével, hogy bizonyítsa Öntől származnak</translation>
     </message>
     <message>
-        <source>Verify messages to ensure they were signed with specified Bitcoin addresses</source>
+        <source>Verify messages to ensure they were signed with specified MoneyTreeXE addresses</source>
         <translation>Ellenőrizze az üzeneteket, hogy a megadott Bitcoin címekkel lettek-e aláírva</translation>
     </message>
     <message>
@@ -746,7 +746,7 @@
         <translation>Küldési cím szerkesztése</translation>
     </message>
     <message>
-        <source>The entered address "%1" is not a valid Bitcoin address.</source>
+        <source>The entered address "%1" is not a valid MoneyTreeXE address.</source>
         <translation>A megadott cím"%1" nem egy érvényes Bitcoin cím.</translation>
     </message>
     <message>
@@ -1330,7 +1330,7 @@
         <translation>Érvénytelen fizetési cím %1</translation>
     </message>
     <message>
-        <source>URI cannot be parsed! This can be caused by an invalid Bitcoin address or malformed URI parameters.</source>
+        <source>URI cannot be parsed! This can be caused by an invalid MoneyTreeXE address or malformed URI parameters.</source>
         <translation>Az URI nem dolgozható fel! Ennek oka lehet egy érvénytelen Bitcoin-cím, vagy hibás URI-paraméterek.</translation>
     </message>
     <message>
@@ -1428,7 +1428,7 @@
         <translation>Összeg</translation>
     </message>
     <message>
-        <source>Enter a Bitcoin address (e.g. %1)</source>
+        <source>Enter a MoneyTreeXE address (e.g. %1)</source>
         <translation>Adjon meg egy Bitcoin-címet (pl. %1)</translation>
     </message>
     <message>
@@ -2153,7 +2153,7 @@
         <translation>Fizetési kérelem lejárt</translation>
     </message>
     <message>
-        <source>Warning: Invalid Bitcoin address</source>
+        <source>Warning: Invalid MoneyTreeXE address</source>
         <translation>Figyelem: érvénytelen Bitcoin cím</translation>
     </message>
     <message>
