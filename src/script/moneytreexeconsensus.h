@@ -3,12 +3,12 @@
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#ifndef BITCOIN_MONEYTREEXECONSENSUS_H
-#define BITCOIN_MONEYTREEXECONSENSUS_H
+#ifndef MONEYTREEXE_MONEYTREEXECONSENSUS_H
+#define MONEYTREEXE_MONEYTREEXECONSENSUS_H
 
 #include <stdint.h>
 
-#if defined(BUILD_BITCOIN_INTERNAL) && defined(HAVE_CONFIG_H)
+#if defined(BUILD_MONEYTREEXE_INTERNAL) && defined(HAVE_CONFIG_H)
 #include <config/bitcoin-config.h>
   #if defined(_WIN32)
     #if defined(DLL_EXPORT)
@@ -80,4 +80,4 @@ EXPORT_SYMBOL unsigned int moneytreexeconsensus_version();
 
 #undef EXPORT_SYMBOL
 
-#endif // BITCOIN_MONEYTREEXECONSENSUS_H
+#endif // MONEYTREEXE_MONEYTREEXECONSENSUS_H

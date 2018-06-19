@@ -22,7 +22,7 @@ RAW_TEST_FILES =
 GENERATED_TEST_FILES = $(JSON_TEST_FILES:.json=.json.h) $(RAW_TEST_FILES:.raw=.raw.h)
 
 # test_moneytreexe binary #
-BITCOIN_TESTS =\
+MONEYTREEXE_TESTS =\
   test/arith_uint256_tests.cpp \
   test/scriptnum10.h \
   test/addrman_tests.cpp \
@@ -89,7 +89,7 @@ BITCOIN_TESTS =\
   test/versionbits_tests.cpp
 
 if ENABLE_WALLET
-BITCOIN_TESTS += \
+MONEYTREEXE_TESTS += \
   wallet/test/wallet_test_fixture.cpp \
   wallet/test/wallet_test_fixture.h \
   wallet/test/accounting_tests.cpp \
@@ -97,13 +97,13 @@ BITCOIN_TESTS += \
   wallet/test/crypto_tests.cpp
 endif
 
-test_test_moneytreexe_SOURCES = $(BITCOIN_TESTS) $(JSON_TEST_FILES) $(RAW_TEST_FILES)
-test_test_moneytreexe_CPPFLAGS = $(AM_CPPFLAGS) $(BITCOIN_INCLUDES) $(TESTDEFS) $(EVENT_CFLAGS)
+test_test_moneytreexe_SOURCES = $(MONEYTREEXE_TESTS) $(JSON_TEST_FILES) $(RAW_TEST_FILES)
+test_test_moneytreexe_CPPFLAGS = $(AM_CPPFLAGS) $(MONEYTREEXE_INCLUDES) $(TESTDEFS) $(EVENT_CFLAGS)
 test_test_moneytreexe_LDADD =
 if ENABLE_WALLET
-test_test_moneytreexe_LDADD += $(LIBBITCOIN_WALLET)
+test_test_moneytreexe_LDADD += $(LIBMONEYTREEXE_WALLET)
 endif
-test_test_moneytreexe_LDADD += $(LIBMONEYTREEXE_SERVER) $(LIBMONEYTREEXE_CLI) $(LIBMONEYTREEXE_COMMON) $(LIBMONEYTREEXE_UTIL) $(LIBMONEYTREEXE_CONSENSUS) $(LIBBITCOIN_CRYPTO) $(LIBUNIVALUE) \
+test_test_moneytreexe_LDADD += $(LIBMONEYTREEXE_SERVER) $(LIBMONEYTREEXE_CLI) $(LIBMONEYTREEXE_COMMON) $(LIBMONEYTREEXE_UTIL) $(LIBMONEYTREEXE_CONSENSUS) $(LIBMONEYTREEXE_CRYPTO) $(LIBUNIVALUE) \
   $(LIBLEVELDB) $(LIBLEVELDB_SSE42) $(LIBMEMENV) $(BOOST_LIBS) $(BOOST_UNIT_TEST_FRAMEWORK_LIB) $(LIBSECP256K1) $(EVENT_LIBS) $(EVENT_PTHREADS_LIBS)
 test_test_moneytreexe_CXXFLAGS = $(AM_CXXFLAGS) $(PIE_FLAGS)
 
@@ -117,7 +117,7 @@ endif
 
 # test_moneytreexe_fuzzy binary #
 test_test_moneytreexe_fuzzy_SOURCES = test/test_moneytreexe_fuzzy.cpp
-test_test_moneytreexe_fuzzy_CPPFLAGS = $(AM_CPPFLAGS) $(BITCOIN_INCLUDES)
+test_test_moneytreexe_fuzzy_CPPFLAGS = $(AM_CPPFLAGS) $(MONEYTREEXE_INCLUDES)
 test_test_moneytreexe_fuzzy_CXXFLAGS = $(AM_CXXFLAGS) $(PIE_FLAGS)
 test_test_moneytreexe_fuzzy_LDFLAGS = $(RELDFLAGS) $(AM_LDFLAGS) $(LIBTOOL_APP_LDFLAGS)
 
@@ -127,7 +127,7 @@ test_test_moneytreexe_fuzzy_LDADD = \
   $(LIBMONEYTREEXE_COMMON) \
   $(LIBMONEYTREEXE_UTIL) \
   $(LIBMONEYTREEXE_CONSENSUS) \
-  $(LIBBITCOIN_CRYPTO) \
+  $(LIBMONEYTREEXE_CRYPTO) \
   $(LIBSECP256K1)
 
 test_test_moneytreexe_fuzzy_LDADD += $(BOOST_LIBS) $(CRYPTO_LIBS)
@@ -135,11 +135,11 @@ test_test_moneytreexe_fuzzy_LDADD += $(BOOST_LIBS) $(CRYPTO_LIBS)
 
 nodist_test_test_moneytreexe_SOURCES = $(GENERATED_TEST_FILES)
 
-$(BITCOIN_TESTS): $(GENERATED_TEST_FILES)
+$(MONEYTREEXE_TESTS): $(GENERATED_TEST_FILES)
 
-CLEAN_BITCOIN_TEST = test/*.gcda test/*.gcno $(GENERATED_TEST_FILES)
+CLEAN_MONEYTREEXE_TEST = test/*.gcda test/*.gcno $(GENERATED_TEST_FILES)
 
-CLEANFILES += $(CLEAN_BITCOIN_TEST)
+CLEANFILES += $(CLEAN_MONEYTREEXE_TEST)
 
 bitcoin_test: $(TEST_BINARY)
 
@@ -147,7 +147,7 @@ bitcoin_test_check: $(TEST_BINARY) FORCE
 	$(MAKE) check-TESTS TESTS=$^
 
 bitcoin_test_clean : FORCE
-	rm -f $(CLEAN_BITCOIN_TEST) $(test_test_moneytreexe_OBJECTS) $(TEST_BINARY)
+	rm -f $(CLEAN_MONEYTREEXE_TEST) $(test_test_moneytreexe_OBJECTS) $(TEST_BINARY)
 
 check-local:
 	@echo "Running test/util/bitcoin-util-test.py..."

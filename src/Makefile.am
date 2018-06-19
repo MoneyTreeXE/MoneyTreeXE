@@ -18,28 +18,28 @@ else
 LIBUNIVALUE = $(UNIVALUE_LIBS)
 endif
 
-BITCOIN_INCLUDES=-I$(builddir) $(BDB_CPPFLAGS) $(BOOST_CPPFLAGS) $(LEVELDB_CPPFLAGS) $(CRYPTO_CFLAGS) $(SSL_CFLAGS)
+MONEYTREEXE_INCLUDES=-I$(builddir) $(BDB_CPPFLAGS) $(BOOST_CPPFLAGS) $(LEVELDB_CPPFLAGS) $(CRYPTO_CFLAGS) $(SSL_CFLAGS)
 
-BITCOIN_INCLUDES += -I$(srcdir)/secp256k1/include
-BITCOIN_INCLUDES += $(UNIVALUE_CFLAGS)
+MONEYTREEXE_INCLUDES += -I$(srcdir)/secp256k1/include
+MONEYTREEXE_INCLUDES += $(UNIVALUE_CFLAGS)
 
 LIBMONEYTREEXE_SERVER=libmoneytreexe_server.a
 LIBMONEYTREEXE_COMMON=libmoneytreexe_common.a
 LIBMONEYTREEXE_CONSENSUS=libmoneytreexe_consensus.a
 LIBMONEYTREEXE_CLI=libmoneytreexe_cli.a
 LIBMONEYTREEXE_UTIL=libmoneytreexe_util.a
-LIBBITCOIN_CRYPTO=crypto/libbitcoin_crypto.a
+LIBMONEYTREEXE_CRYPTO=crypto/libbitcoin_crypto.a
 LIBMONEYTREEXEQT=qt/libmoneytreexeqt.a
 LIBSECP256K1=secp256k1/libsecp256k1.la
 
 if ENABLE_ZMQ
-LIBBITCOIN_ZMQ=libbitcoin_zmq.a
+LIBMONEYTREEXE_ZMQ=libbitcoin_zmq.a
 endif
-if BUILD_BITCOIN_LIBS
+if BUILD_MONEYTREEXE_LIBS
 LIBMONEYTREEXECONSENSUS=libmoneytreexeconsensus.la
 endif
 if ENABLE_WALLET
-LIBBITCOIN_WALLET=libbitcoin_wallet.a
+LIBMONEYTREEXE_WALLET=libbitcoin_wallet.a
 endif
 
 $(LIBSECP256K1): $(wildcard secp256k1/src/*) $(wildcard secp256k1/include/*)
@@ -48,14 +48,14 @@ $(LIBSECP256K1): $(wildcard secp256k1/src/*) $(wildcard secp256k1/include/*)
 # Make is not made aware of per-object dependencies to avoid limiting building parallelization
 # But to build the less dependent modules first, we manually select their order here:
 EXTRA_LIBRARIES += \
-  $(LIBBITCOIN_CRYPTO) \
+  $(LIBMONEYTREEXE_CRYPTO) \
   $(LIBMONEYTREEXE_UTIL) \
   $(LIBMONEYTREEXE_COMMON) \
   $(LIBMONEYTREEXE_CONSENSUS) \
   $(LIBMONEYTREEXE_SERVER) \
   $(LIBMONEYTREEXE_CLI) \
-  $(LIBBITCOIN_WALLET) \
-  $(LIBBITCOIN_ZMQ)
+  $(LIBMONEYTREEXE_WALLET) \
+  $(LIBMONEYTREEXE_ZMQ)
 
 lib_LTLIBRARIES = $(LIBMONEYTREEXECONSENSUS)
 
@@ -74,7 +74,7 @@ endif
 
 .PHONY: FORCE check-symbols check-security
 # bitcoin core #
-BITCOIN_CORE_H = \
+MONEYTREEXE_CORE_H = \
   addrdb.h \
   addrman.h \
   base58.h \
@@ -184,7 +184,7 @@ obj/build.h: FORCE
 libmoneytreexe_util_a-clientversion.$(OBJEXT): obj/build.h
 
 # server: shared between moneytreexed and moneytreexe-qt
-libmoneytreexe_server_a_CPPFLAGS = $(AM_CPPFLAGS) $(BITCOIN_INCLUDES) $(MINIUPNPC_CPPFLAGS) $(EVENT_CFLAGS) $(EVENT_PTHREADS_CFLAGS)
+libmoneytreexe_server_a_CPPFLAGS = $(AM_CPPFLAGS) $(MONEYTREEXE_INCLUDES) $(MINIUPNPC_CPPFLAGS) $(EVENT_CFLAGS) $(EVENT_PTHREADS_CFLAGS)
 libmoneytreexe_server_a_CXXFLAGS = $(AM_CXXFLAGS) $(PIE_FLAGS)
 libmoneytreexe_server_a_SOURCES = \
   addrdb.cpp \
@@ -225,10 +225,10 @@ libmoneytreexe_server_a_SOURCES = \
   validation.cpp \
   validationinterface.cpp \
   versionbits.cpp \
-  $(BITCOIN_CORE_H)
+  $(MONEYTREEXE_CORE_H)
 
 if ENABLE_ZMQ
-libbitcoin_zmq_a_CPPFLAGS = $(BITCOIN_INCLUDES) $(ZMQ_CFLAGS)
+libbitcoin_zmq_a_CPPFLAGS = $(MONEYTREEXE_INCLUDES) $(ZMQ_CFLAGS)
 libbitcoin_zmq_a_CXXFLAGS = $(AM_CXXFLAGS) $(PIE_FLAGS)
 libbitcoin_zmq_a_SOURCES = \
   zmq/zmqabstractnotifier.cpp \
@@ -239,7 +239,7 @@ endif
 
 # wallet: shared between moneytreexed and moneytreexe-qt, but only linked
 # when wallet enabled
-libbitcoin_wallet_a_CPPFLAGS = $(AM_CPPFLAGS) $(BITCOIN_INCLUDES)
+libbitcoin_wallet_a_CPPFLAGS = $(AM_CPPFLAGS) $(MONEYTREEXE_INCLUDES)
 libbitcoin_wallet_a_CXXFLAGS = $(AM_CXXFLAGS) $(PIE_FLAGS)
 libbitcoin_wallet_a_SOURCES = \
   wallet/crypter.cpp \
@@ -252,7 +252,7 @@ libbitcoin_wallet_a_SOURCES = \
   wallet/wallet.cpp \
   wallet/walletdb.cpp \
   wallet/walletutil.cpp \
-  $(BITCOIN_CORE_H)
+  $(MONEYTREEXE_CORE_H)
 
 # crypto primitives library
 crypto_libbitcoin_crypto_a_CPPFLAGS = $(AM_CPPFLAGS)
@@ -281,7 +281,7 @@ crypto_libbitcoin_crypto_a_SOURCES += crypto/sha256_sse4.cpp
 endif
 
 # consensus: shared between all executables that validate any consensus rules.
-libmoneytreexe_consensus_a_CPPFLAGS = $(AM_CPPFLAGS) $(BITCOIN_INCLUDES)
+libmoneytreexe_consensus_a_CPPFLAGS = $(AM_CPPFLAGS) $(MONEYTREEXE_INCLUDES)
 libmoneytreexe_consensus_a_CXXFLAGS = $(AM_CXXFLAGS) $(PIE_FLAGS)
 libmoneytreexe_consensus_a_SOURCES = \
   amount.h \
@@ -316,7 +316,7 @@ libmoneytreexe_consensus_a_SOURCES = \
   version.h
 
 # common: shared between moneytreexed, and moneytreexe-qt and non-server tools
-libmoneytreexe_common_a_CPPFLAGS = $(AM_CPPFLAGS) $(BITCOIN_INCLUDES)
+libmoneytreexe_common_a_CPPFLAGS = $(AM_CPPFLAGS) $(MONEYTREEXE_INCLUDES)
 libmoneytreexe_common_a_CXXFLAGS = $(AM_CXXFLAGS) $(PIE_FLAGS)
 libmoneytreexe_common_a_SOURCES = \
   base58.cpp \
@@ -336,12 +336,12 @@ libmoneytreexe_common_a_SOURCES = \
   script/sign.cpp \
   script/standard.cpp \
   warnings.cpp \
-  $(BITCOIN_CORE_H)
+  $(MONEYTREEXE_CORE_H)
 
 # util: shared between all executables.
 # This library *must* be included to make sure that the glibc
 # backward-compatibility objects and their sanity checks are linked.
-libmoneytreexe_util_a_CPPFLAGS = $(AM_CPPFLAGS) $(BITCOIN_INCLUDES)
+libmoneytreexe_util_a_CPPFLAGS = $(AM_CPPFLAGS) $(MONEYTREEXE_INCLUDES)
 libmoneytreexe_util_a_CXXFLAGS = $(AM_CXXFLAGS) $(PIE_FLAGS)
 libmoneytreexe_util_a_SOURCES = \
   support/lockedpool.cpp \
@@ -361,25 +361,25 @@ libmoneytreexe_util_a_SOURCES = \
   utilmoneystr.cpp \
   utilstrencodings.cpp \
   utiltime.cpp \
-  $(BITCOIN_CORE_H)
+  $(MONEYTREEXE_CORE_H)
 
 if GLIBC_BACK_COMPAT
 libmoneytreexe_util_a_SOURCES += compat/glibc_compat.cpp
 endif
 
 # cli: shared between moneytreexe-cli and moneytreexe-qt
-libmoneytreexe_cli_a_CPPFLAGS = $(AM_CPPFLAGS) $(BITCOIN_INCLUDES)
+libmoneytreexe_cli_a_CPPFLAGS = $(AM_CPPFLAGS) $(MONEYTREEXE_INCLUDES)
 libmoneytreexe_cli_a_CXXFLAGS = $(AM_CXXFLAGS) $(PIE_FLAGS)
 libmoneytreexe_cli_a_SOURCES = \
   rpc/client.cpp \
-  $(BITCOIN_CORE_H)
+  $(MONEYTREEXE_CORE_H)
 
 nodist_libmoneytreexe_util_a_SOURCES = $(srcdir)/obj/build.h
 #
 
 # moneytreexed binary #
 moneytreexed_SOURCES = moneytreexed.cpp
-moneytreexed_CPPFLAGS = $(AM_CPPFLAGS) $(BITCOIN_INCLUDES)
+moneytreexed_CPPFLAGS = $(AM_CPPFLAGS) $(MONEYTREEXE_INCLUDES)
 moneytreexed_CXXFLAGS = $(AM_CXXFLAGS) $(PIE_FLAGS)
 moneytreexed_LDFLAGS = $(RELDFLAGS) $(AM_LDFLAGS) $(LIBTOOL_APP_LDFLAGS)
 
@@ -392,10 +392,10 @@ moneytreexed_LDADD = \
   $(LIBMONEYTREEXE_COMMON) \
   $(LIBUNIVALUE) \
   $(LIBMONEYTREEXE_UTIL) \
-  $(LIBBITCOIN_WALLET) \
-  $(LIBBITCOIN_ZMQ) \
+  $(LIBMONEYTREEXE_WALLET) \
+  $(LIBMONEYTREEXE_ZMQ) \
   $(LIBMONEYTREEXE_CONSENSUS) \
-  $(LIBBITCOIN_CRYPTO) \
+  $(LIBMONEYTREEXE_CRYPTO) \
   $(LIBLEVELDB) \
   $(LIBLEVELDB_SSE42) \
   $(LIBMEMENV) \
@@ -405,7 +405,7 @@ moneytreexed_LDADD += $(BOOST_LIBS) $(BDB_LIBS) $(SSL_LIBS) $(CRYPTO_LIBS) $(MIN
 
 # moneytreexe-cli binary #
 moneytreexe_cli_SOURCES = moneytreexe-cli.cpp
-moneytreexe_cli_CPPFLAGS = $(AM_CPPFLAGS) $(BITCOIN_INCLUDES) $(EVENT_CFLAGS)
+moneytreexe_cli_CPPFLAGS = $(AM_CPPFLAGS) $(MONEYTREEXE_INCLUDES) $(EVENT_CFLAGS)
 moneytreexe_cli_CXXFLAGS = $(AM_CXXFLAGS) $(PIE_FLAGS)
 moneytreexe_cli_LDFLAGS = $(RELDFLAGS) $(AM_LDFLAGS) $(LIBTOOL_APP_LDFLAGS)
 
@@ -417,14 +417,14 @@ moneytreexe_cli_LDADD = \
   $(LIBMONEYTREEXE_CLI) \
   $(LIBUNIVALUE) \
   $(LIBMONEYTREEXE_UTIL) \
-  $(LIBBITCOIN_CRYPTO)
+  $(LIBMONEYTREEXE_CRYPTO)
 
 moneytreexe_cli_LDADD += $(BOOST_LIBS) $(SSL_LIBS) $(CRYPTO_LIBS) $(EVENT_LIBS)
 #
 
 # moneytreexe-tx binary #
 moneytreexe_tx_SOURCES = moneytreexe-tx.cpp
-moneytreexe_tx_CPPFLAGS = $(AM_CPPFLAGS) $(BITCOIN_INCLUDES)
+moneytreexe_tx_CPPFLAGS = $(AM_CPPFLAGS) $(MONEYTREEXE_INCLUDES)
 moneytreexe_tx_CXXFLAGS = $(AM_CXXFLAGS) $(PIE_FLAGS)
 moneytreexe_tx_LDFLAGS = $(RELDFLAGS) $(AM_LDFLAGS) $(LIBTOOL_APP_LDFLAGS)
 
@@ -437,14 +437,14 @@ moneytreexe_tx_LDADD = \
   $(LIBMONEYTREEXE_COMMON) \
   $(LIBMONEYTREEXE_UTIL) \
   $(LIBMONEYTREEXE_CONSENSUS) \
-  $(LIBBITCOIN_CRYPTO) \
+  $(LIBMONEYTREEXE_CRYPTO) \
   $(LIBSECP256K1)
 
 moneytreexe_tx_LDADD += $(BOOST_LIBS) $(CRYPTO_LIBS)
 #
 
 # moneytreexeconsensus library #
-if BUILD_BITCOIN_LIBS
+if BUILD_MONEYTREEXE_LIBS
 include_HEADERS = script/moneytreexeconsensus.h
 libmoneytreexeconsensus_la_SOURCES = $(crypto_libbitcoin_crypto_a_SOURCES) $(libmoneytreexe_consensus_a_SOURCES)
 
@@ -454,7 +454,7 @@ endif
 
 libmoneytreexeconsensus_la_LDFLAGS = $(AM_LDFLAGS) -no-undefined $(RELDFLAGS)
 libmoneytreexeconsensus_la_LIBADD = $(LIBSECP256K1)
-libmoneytreexeconsensus_la_CPPFLAGS = $(AM_CPPFLAGS) -I$(builddir)/obj -I$(srcdir)/secp256k1/include -DBUILD_BITCOIN_INTERNAL
+libmoneytreexeconsensus_la_CPPFLAGS = $(AM_CPPFLAGS) -I$(builddir)/obj -I$(srcdir)/secp256k1/include -DBUILD_MONEYTREEXE_INTERNAL
 libmoneytreexeconsensus_la_CXXFLAGS = $(AM_CXXFLAGS) $(PIE_FLAGS)
 
 endif

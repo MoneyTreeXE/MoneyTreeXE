@@ -24,13 +24,13 @@ TEST_QT_H = \
   qt/test/paymentservertests.h \
   qt/test/wallettests.h
 
-TEST_BITCOIN_CPP = \
+TEST_MONEYTREEXE_CPP = \
   test/test_moneytreexe.cpp
 
-TEST_BITCOIN_H = \
+TEST_MONEYTREEXE_H = \
   test/test_moneytreexe.h
 
-qt_test_test_moneytreexe_qt_CPPFLAGS = $(AM_CPPFLAGS) $(BITCOIN_INCLUDES) $(MONEYTREEXE_QT_INCLUDES) \
+qt_test_test_moneytreexe_qt_CPPFLAGS = $(AM_CPPFLAGS) $(MONEYTREEXE_INCLUDES) $(MONEYTREEXE_QT_INCLUDES) \
   $(QT_INCLUDES) $(QT_TEST_INCLUDES) $(PROTOBUF_CFLAGS)
 
 qt_test_test_moneytreexe_qt_SOURCES = \
@@ -39,8 +39,8 @@ qt_test_test_moneytreexe_qt_SOURCES = \
   qt/test/test_main.cpp \
   qt/test/uritests.cpp \
   $(TEST_QT_H) \
-  $(TEST_BITCOIN_CPP) \
-  $(TEST_BITCOIN_H)
+  $(TEST_MONEYTREEXE_CPP) \
+  $(TEST_MONEYTREEXE_H)
 if ENABLE_WALLET
 qt_test_test_moneytreexe_qt_SOURCES += \
   qt/test/paymentservertests.cpp \
@@ -52,12 +52,12 @@ nodist_qt_test_test_moneytreexe_qt_SOURCES = $(TEST_QT_MOC_CPP)
 
 qt_test_test_moneytreexe_qt_LDADD = $(LIBMONEYTREEXEQT) $(LIBMONEYTREEXE_SERVER)
 if ENABLE_WALLET
-qt_test_test_moneytreexe_qt_LDADD += $(LIBBITCOIN_WALLET)
+qt_test_test_moneytreexe_qt_LDADD += $(LIBMONEYTREEXE_WALLET)
 endif
 if ENABLE_ZMQ
-qt_test_test_moneytreexe_qt_LDADD += $(LIBBITCOIN_ZMQ) $(ZMQ_LIBS)
+qt_test_test_moneytreexe_qt_LDADD += $(LIBMONEYTREEXE_ZMQ) $(ZMQ_LIBS)
 endif
-qt_test_test_moneytreexe_qt_LDADD += $(LIBMONEYTREEXE_CLI) $(LIBMONEYTREEXE_COMMON) $(LIBMONEYTREEXE_UTIL) $(LIBMONEYTREEXE_CONSENSUS) $(LIBBITCOIN_CRYPTO) $(LIBUNIVALUE) $(LIBLEVELDB) \
+qt_test_test_moneytreexe_qt_LDADD += $(LIBMONEYTREEXE_CLI) $(LIBMONEYTREEXE_COMMON) $(LIBMONEYTREEXE_UTIL) $(LIBMONEYTREEXE_CONSENSUS) $(LIBMONEYTREEXE_CRYPTO) $(LIBUNIVALUE) $(LIBLEVELDB) \
   $(LIBLEVELDB_SSE42) $(LIBMEMENV) $(BOOST_LIBS) $(QT_DBUS_LIBS) $(QT_TEST_LIBS) $(QT_LIBS) \
   $(QR_LIBS) $(PROTOBUF_LIBS) $(BDB_LIBS) $(SSL_LIBS) $(CRYPTO_LIBS) $(MINIUPNPC_LIBS) $(LIBSECP256K1) \
   $(EVENT_PTHREADS_LIBS) $(EVENT_LIBS)

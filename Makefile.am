@@ -11,15 +11,15 @@ endif
 
 export PYTHONPATH
 
-if BUILD_BITCOIN_LIBS
+if BUILD_MONEYTREEXE_LIBS
 pkgconfigdir = $(libdir)/pkgconfig
 pkgconfig_DATA = libmoneytreexeconsensus.pc
 endif
 
-MONEYTREEXED_BIN=$(top_builddir)/src/$(BITCOIN_DAEMON_NAME)$(EXEEXT)
-MONEYTREEXE_QT_BIN=$(top_builddir)/src/qt/$(BITCOIN_GUI_NAME)$(EXEEXT)
+MONEYTREEXED_BIN=$(top_builddir)/src/$(MONEYTREEXE_DAEMON_NAME)$(EXEEXT)
+MONEYTREEXE_QT_BIN=$(top_builddir)/src/qt/$(MONEYTREEXE_GUI_NAME)$(EXEEXT)
 MONEYTREEXE_CLI_BIN=$(top_builddir)/src/$(MONEYTREEXE_CLI_NAME)$(EXEEXT)
-BITCOIN_WIN_INSTALLER=$(PACKAGE)-$(PACKAGE_VERSION)-win$(WINDOWS_BITS)-setup$(EXEEXT)
+MONEYTREEXE_WIN_INSTALLER=$(PACKAGE)-$(PACKAGE_VERSION)-win$(WINDOWS_BITS)-setup$(EXEEXT)
 
 empty :=
 space := $(empty) $(empty)
@@ -70,7 +70,7 @@ COVERAGE_INFO = baseline.info \
 dist-hook:
 	-$(GIT) archive --format=tar HEAD -- src/clientversion.cpp | $(AMTAR) -C $(top_distdir) -xf -
 
-$(BITCOIN_WIN_INSTALLER): all-recursive
+$(MONEYTREEXE_WIN_INSTALLER): all-recursive
 	$(MKDIR_P) $(top_builddir)/release
 	STRIPPROG="$(STRIP)" $(INSTALL_STRIP_PROGRAM) $(MONEYTREEXED_BIN) $(top_builddir)/release
 	STRIPPROG="$(STRIP)" $(INSTALL_STRIP_PROGRAM) $(MONEYTREEXE_QT_BIN) $(top_builddir)/release
@@ -156,7 +156,7 @@ appbundle: $(OSX_APP_BUILT)
 deploy: $(OSX_DMG)
 endif
 if TARGET_WINDOWS
-deploy: $(BITCOIN_WIN_INSTALLER)
+deploy: $(MONEYTREEXE_WIN_INSTALLER)
 endif
 
 $(MONEYTREEXE_QT_BIN): FORCE
@@ -271,7 +271,7 @@ EXTRA_DIST += \
     test/util/data/txcreatesignv1.json \
     test/util/data/txcreatesignv2.hex
 
-CLEANFILES = $(OSX_DMG) $(BITCOIN_WIN_INSTALLER)
+CLEANFILES = $(OSX_DMG) $(MONEYTREEXE_WIN_INSTALLER)
 
 .INTERMEDIATE: $(COVERAGE_INFO)
 

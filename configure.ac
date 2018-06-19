@@ -14,8 +14,8 @@ AC_CONFIG_HEADERS([src/config/bitcoin-config.h])
 AC_CONFIG_AUX_DIR([build-aux])
 AC_CONFIG_MACRO_DIR([build-aux/m4])
 
-BITCOIN_DAEMON_NAME=moneytreexed
-BITCOIN_GUI_NAME=moneytreexe-qt
+MONEYTREEXE_DAEMON_NAME=moneytreexed
+MONEYTREEXE_GUI_NAME=moneytreexe-qt
 MONEYTREEXE_CLI_NAME=moneytreexe-cli
 MONEYTREEXE_TX_NAME=moneytreexe-tx
 
@@ -27,9 +27,9 @@ fi
 
 AC_CANONICAL_HOST
 
-AH_TOP([#ifndef BITCOIN_CONFIG_H])
-AH_TOP([#define BITCOIN_CONFIG_H])
-AH_BOTTOM([#endif //BITCOIN_CONFIG_H])
+AH_TOP([#ifndef MONEYTREEXE_CONFIG_H])
+AH_TOP([#define MONEYTREEXE_CONFIG_H])
+AH_BOTTOM([#endif //MONEYTREEXE_CONFIG_H])
 
 dnl faketime breaks configure and is only needed for make. Disable it here.
 unset FAKETIME
@@ -734,7 +734,7 @@ AC_SUBST(LIBMEMENV)
 
 if test x$enable_wallet != xno; then
     dnl Check for libdb_cxx only if wallet enabled
-    BITCOIN_FIND_BDB48
+    MONEYTREEXE_FIND_BDB48
 fi
 
 dnl Check for libminiupnpc (optional)
@@ -1069,7 +1069,7 @@ AM_CONDITIONAL([BUILD_MONEYTREEXE_UTILS], [test x$build_moneytreexe_utils = xyes
 AC_MSG_RESULT($build_moneytreexe_utils)
 
 AC_MSG_CHECKING([whether to build libraries])
-AM_CONDITIONAL([BUILD_BITCOIN_LIBS], [test x$build_moneytreexe_libs = xyes])
+AM_CONDITIONAL([BUILD_MONEYTREEXE_LIBS], [test x$build_moneytreexe_libs = xyes])
 if test x$build_moneytreexe_libs = xyes; then
   AC_DEFINE(HAVE_CONSENSUS_LIB, 1, [Define this symbol if the consensus lib has been built])
   AC_CONFIG_FILES([libmoneytreexeconsensus.pc:libmoneytreexeconsensus.pc.in])
@@ -1230,8 +1230,8 @@ AC_SUBST(COPYRIGHT_YEAR, _COPYRIGHT_YEAR)
 AC_SUBST(COPYRIGHT_HOLDERS, "_COPYRIGHT_HOLDERS")
 AC_SUBST(COPYRIGHT_HOLDERS_SUBSTITUTION, "_COPYRIGHT_HOLDERS_SUBSTITUTION")
 AC_SUBST(COPYRIGHT_HOLDERS_FINAL, "_COPYRIGHT_HOLDERS_FINAL")
-AC_SUBST(BITCOIN_DAEMON_NAME)
-AC_SUBST(BITCOIN_GUI_NAME)
+AC_SUBST(MONEYTREEXE_DAEMON_NAME)
+AC_SUBST(MONEYTREEXE_GUI_NAME)
 AC_SUBST(MONEYTREEXE_CLI_NAME)
 AC_SUBST(MONEYTREEXE_TX_NAME)
 
