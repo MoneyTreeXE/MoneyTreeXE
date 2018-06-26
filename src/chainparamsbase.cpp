@@ -33,6 +33,7 @@ public:
     CBaseMainParams()
     {
         nRPCPort = 35654;
+        strDataDir = "mainnet";
     }
 };
 
